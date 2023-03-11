@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>速查表 1 - Bootstrap 響應式布局</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://together9001.github.io/bootstrap/mycss.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-dark text-white">
+  <h1 class="text-center text-warning">速查表 1 - Bootstrap 響應式布局</h1>
+
+  <div class="container mt-24 p-4 mx-auto"> <!-- 外圍大包 START -->
+    <p class="mb-5 pb-4 text-center text-white border-bottom border-secondary">
+      Boostrap 最大的學習重點是如何善用他的 grid 來發展你的 RWD 網站，以及如何快速的使用元件來完成網站部屬。<br>
+      在刻版過程當中使用通用操作完成簡單的屬性設定，但切記不要過度依賴 class 命名瘋狂指定，這會讓你的 HTML 的複雜度提升。 <br>
+      如果你的 class 公式需求過高時還是回到自訂 class 來完成 CSS 屬性編寫。
+    </p>
+
+    <div class="border-bottom border-secondary">
+      <p>BS 很核心重要的排版觀念，包含了：</p>
+      <ul>
+        <li>響應式的斷點處理</li>
+        <li>寬窄版的容器區塊</li>
+        <li>空間 12 格的網格分配與間格</li>
+        <li>水平垂直的 Flex 對齊方式</li>
+        <li>內外間距的通用排版</li>
+      </ul>
+    </div>
+
+    <div class="container mt-24 p-4 mx-auto">
+      <h5 class="text-warning">【響應式斷點 Breakpoints - media】</h5>
+      <p>
+        響應式原理根據 Media Queries 來計算瀏覽器可符合最小寬度條件進行不同的屬性輸出，統合出公式化的六個等級去控制這些 viewpoint 寬度做不同的樣式。<br><br>
+
+        // 1. Extra small devices （直立手機用途，小於 576px)<br>
+        <span>/*none @media queries :: 沒有 Media Query 規則是因為 BS 以 100%為低標 */</sapn><br><br>
+
+          // 2. Small devices （橫式手機用途，包含 <span class="text-warning">576px</span> and up)<br>
+          <span class="text-danger">@media </span> (<span class="text-info">min-width:</span> <span
+            class="text-warning">576px</span>) { ... }<br><br>
+
+          // 3. Medium devices （平板用途，<span class="text-warning">768px</span> and up)<br>
+          <span class="text-danger">@media </span> (<span class="text-info">min-width:</span> <span
+            class="text-warning">768px</span>) { ... }<br><br>
+
+          // 4. Large devices （電腦用途，<span class="text-warning">992px</span> and up)<br>
+          <span class="text-danger">@media </span> (<span class="text-info">min-width:</span> <span
+            class="text-warning">992px</span>) { ... }<br><br>
+
+          // 5. Extra large devices （寬螢幕電腦，<span class="text-warning">1200px</span> and up)<br>
+          <span class="text-danger">@media </span> (<span class="text-info">min-width:</span> <span
+            class="text-warning">1200px</span>) { ... }<br><br>
+
+          // 6. XX-Large devices （超寬比螢幕，<span class="text-warning">1400px</span> and up)<br>
+          <span class="text-danger">@media </span> (<span class="text-info">min-width:</span> <span
+            class="text-warning">1400px</span>) { ... }<br><br>
+
+          只有 table 與 modal 的響應斷點是採用 <span class="text-info">max-width</span> 方式來設計，其各數據相較於前者 min-width 減少 0.2px。<br>
+          不論何種，只需知道公式 xs、sm、md、lg、xl、xxl 六種模式可操作使用即可。
+      </p>
+    </div>
+
+    <div class="mt-1 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【容器 Containers】</h5>
+      <p>
+        容器是最基本的布局外框元素，使用 grid 系統時一定要搭配使用。
+        <br>同時容器也能讓我們選擇如何在螢幕上呈現寬版（填滿）或窄版（侷限範圍）設計。
+        <br>最外層的主容器應用如前面範例顯示，由於沒有指定容器因此該區塊總元素繼承了 body 空間達到 100%，此時若添加容器 container 便能使該區塊總元素不是塞滿方式。
+        <br><br>
+        <span class="text-warning">container</span><span class="my-width-064"></span>窄版（本身響應式，不同的螢幕寬會有各自數據的窄方式）<br>
+        <span class="text-warning">container-fluid</span><span class="my-width-025"></span>滿版（雖填滿，但本身兩側提供保留 padding 預設值
+        0.75rem ）
+      </p>
+    </div>
+
+    <div class="container mt-5 pb-3 mx-auto">
+      <h5 class="text-warning">【響應式斷點 Breakpoints - container】</h5>
+      <p>除了 container與container-fluid，另提供 container-{breakpoint} 的響應斷點公式，能使原先 container 效果差異能延遲於不同裝置上。</p>
+
+      <table class="table table-bordered my-border-42464c">
+        <thead class="text-info text-center">
+          <tr>
+            <th class="text-warning">Class Name</th>
+            <th>Extra small &lt; 576px</th>
+            <th>Small ≥ 576px</th>
+            <th>Medium ≥ 768px</th>
+            <th>Large ≥ 992px</th>
+            <th>Extra large ≥ 1200px</th>
+            <th>XX-Large ≥ 1400px</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="my-bg-color-34383d">
+            <td class="text-warning">.container</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-info text-center">540px</td>
+            <td class="text-info text-center">720px</td>
+            <td class="text-info text-center">960px</td>
+            <td class="text-info text-center">1140px</td>
+            <td class="text-info text-center">1320px</td>
+          </tr>
+          <tr>
+            <td class="text-warning">.container-sm</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-info text-center">540px</td>
+            <td class="text-info text-center">720px</td>
+            <td class="text-info text-center">960px</td>
+            <td class="text-info text-center">1140px</td>
+            <td class="text-info text-center">1320px</td>
+          </tr>
+          <tr class="my-bg-color-34383d">
+            <td class="text-warning">.container-md</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-info text-center">720px</td>
+            <td class="text-info text-center">960px</td>
+            <td class="text-info text-center">1140px</td>
+            <td class="text-info text-center">1320px</td>
+          </tr>
+          <tr>
+            <td class="text-warning">.container-lg</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-info text-center">960px</td>
+            <td class="text-info text-center">1140px</td>
+            <td class="text-info text-center">1320px</td>
+          </tr>
+          <tr class="my-bg-color-34383d">
+            <td class="text-warning">.container-xl</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-info text-center">1140px</td>
+            <td class="text-info text-center">1320px</td>
+          </tr>
+          <tr>
+            <td class="text-warning">.container-fluid</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+            <td class="text-white text-center">100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【響應式斷點 Breakpoints - 網格 Grid】<span class="fs-6 text-white">重要的欄位排版系統</span></h5>
+      <ol>
+        <li>因為 container 關係，為呈現窄版 ( media queries ) 並保持水平置中 ( margin auto )，同時左右兩側為 gutter 網格間距 ( padding 0.75rem )。
+        </li>
+        <li>row 與 col 代表行列理念，範例中分別呈現出 1 行 2 列與 1 行 3 列。</li>
+        <li>row 會反噬外距設計 ( margin -0.75rem ) 剛好與 container 的間距相消，cow 有自己的 gutter 網格間距 ( padding 0.75rem )。</li>
+        <li class="text-warning">.container > .row > .col 的層級結構下，會使多欄位的網格間距能切齊未包含 grid 的普通 container。換言之這三層元素名稱在使用 grid
+          時不可省略。</li>
+        <li class="text-warning">.row 為 flex 設計，因此可輕易添加 flex 屬性進行調整 col 的排列方式。</li>
+        <li>無關鍵數字的 .col 因屬性 flex：100% 持有膨脹係數會均分填滿而等寬。</li>
+        <li class="text-warning">在一個 row 內，可使用 .col- { 1 ~ 12 } 指定欄位的固定寬（ 總和為 12 之分配比例 ），亦可混搭 .col 來填滿剩餘空間。</li>
+        <li class="text-warning">同上，使用 .col-auto 其屬性為 flex：0 0 auto 無膨脹係數，因此採用內容寬為版面寬度。</li>
+      </ol>
+
+      <style>
+        .row>div,
+        .check {
+          background: #6e1a6d;
+          border: 1px solid #e4f777;
+          margin: 0px 0;
+          padding: 0px;
+          text-align: center;
+        }
+      </style>
+      <p>網格是重要的欄位排版系統，能有效的去規劃多欄位如何進行區塊的行列並排方式。<br>Grid 原理採用 flex 所規劃，若熟悉 flex 概念就能理解對齊方式，以及 12 欄空間法根據 flex-basis：auto 與
+        width 百分比為分配操作。
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            col
+          </div>
+          <div class="col">
+            col
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            col
+          </div>
+          <div class="col">
+            col
+          </div>
+          <div class="col">
+            col
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="container">
+
+        <div class="row bg-warning">
+          <div class="col">
+            col
+          </div>
+          <div class="col-9">
+            col-9
+          </div>
+          <div class="col">
+            col
+          </div>
+        </div>
+
+        <div class="row bg-primary">
+          <div class="col">
+            col
+          </div>
+          <div class="col-5">
+            col-5
+          </div>
+          <div class="col-5">
+            col-5
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            col
+          </div>
+          <div class="col-5">
+            col-5
+          </div>
+          <div class="col-auto">
+            col-auto
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto">
+      <h5 class="text-warning">【響應式斷點 Breakpoints - Grid options】<span class="fs-6 text-white">例：.col-md- </span></h5>
+      <p>容器透過網格切成 12 個空間單位去分配。以下為 BS 官方參數說明：</p>
+      <table class="table table-bordered my-border-42464c text-light">
+        <thead class="text-info text-center">
+          <tr>
+            <th></th>
+            <th>xs &lt;576px</th>
+            <th>sm ≥ 576px</th>
+            <th>md ≥ 768px</th>
+            <th>lg ≥ 992px</th>
+            <th>xl ≥ 1200px</th>
+            <th>xxl ≥ 1400px</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="my-bg-color-34383d text-center">
+            <th>Container max-width</th>
+            <td>None (auto)</td>
+            <td>540px</td>
+            <td>720px</td>
+            <td>960px</td>
+            <td>1140px</td>
+            <td>1320px</td>
+          </tr>
+          <tr class="text-center">
+            <th class="text-start">Class prefix 類前綴</th>
+            <td>.col-</td>
+            <td>.col-sm-</td>
+            <td>.col-md-</td>
+            <td>.col-lg-</td>
+            <td>.col-xl-</td>
+            <td>.col-xxl-</td>
+          </tr>
+          <tr class="text-center my-bg-color-34383d">
+            <th class="text-start"># of columns 列</th>
+            <td colspan="6">12</td>
+          </tr>
+          <tr class="text-center">
+            <th class="text-start">Gutter width 水溝寬度</th>
+            <td colspan="6">1.5rem ( .75rem on left and right )</td>
+          </tr>
+          <tr class="text-center my-bg-color-34383d">
+            <th class="text-start">Custom gutters 自定義水溝寬度</th>
+            <td colspan="6">Yes</td>
+          </tr>
+          <tr class="text-center">
+            <th class="text-start">Nestable 可嵌套</th>
+            <td colspan="6">Yes</td>
+          </tr>
+          <tr class="text-center my-bg-color-34383d">
+            <th class="text-start">Column ordering 列排序</th>
+            <td colspan="6">Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>注意： </p>
+      <ul>
+        <li>總寬空間為 12 份，因此 col- { number } 的 number 總和應為 12，例如 12, 6+6, 3+3+3+3, 3+3+6, 4+4+4, 2+2+2+2+2+2+2……</li>
+        <li>如果總和硬要超過 12，會發生擠壓而自動到下一行繼續輸出。</li>
+        <li>如果想強迫下一行排列，可使用 div.w-100 達到類似的搶奪空間效果（因無內容而看不到），但實際上建議以第二組 row 設計排列。</li>
+        <li>如想以內容為寬，可使用 div.col-auto 將直接以 content 為寬而不是 flex item 之 width 分配值。</li>
+      </ul>
+
+      <h5 class="mt-5 text-warning">【 CSS ： gap 參數 ( display：grid 模式）】<span class="fs-6 text-white">提供控制 grid
+          容器內的子項目之距離參數
+          gap 值。</span><a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout"
+          target="_blank">Basic concepts of grid layout</a></h5>
+
+      <div class="row">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-warning">間距控制：</span>.{ gap } - { size }
+        </div>
+        <div class="mb-n4 col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.{ gap } - { breakpoint } - { size }<br><br>
+          <span class="text-warning">breakpoint：</span><span class="my-width-016"></span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">size：</span><span class="my-width-070"></span>1、2、3、4、5
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【響應斷點 breakpoints - 行列指定 Row columns | 網格參數 Grid options】</h5>
+      <p>除了基本語法 col 與 col-* 使用，也有響應的語法分為 col- { breakpoint } 與 col- { breakpoint } -* 兩種且可混合使用。</p>
+      <ul>
+        <li>如果該 box 某響應狀況下內沒有宣告col就會脫離 grid 單元，而是滿 100%的 box 單元。（除非有需求，否則應避免此狀況）</li>
+        <li>因為自動分配關係，不帶數字的col- { breakpoint }可以寫成col來看待（因為不論何種響應規則下都是最後重新分配寬）</li>
+        <li class="text-warning">響應斷點本身有向上相容（優先權）的效果，所以 col-* &lt; col-sm-* &lt; col-md-* &lt; col-lg-* &lt; col-xl-*
+        </li>
+      </ul>
+      <style>
+        .row>div {
+          background: #000;
+          border: 2px solid #ff0000;
+        }
+
+        .row {
+          margin-bottom: 20px;
+          padding: 10px;
+        }
+      </style>
+      <div class="container">
+        <div class="row">
+          <!-- col 能決定何時才會變成 full width -->
+          <div>this is a normal div, always = 100% ( 不設定 col )</div>
+          <div class="col-12">this is a col-12, always = 100% ( 設定 col-12 )</div>
+          <div class="col">col, width = auto</div>
+          <div class="col-sm bg-danger">col-sm, when &lt;576 = 100%</div>
+          <div class="col-md bg-warning text-black">col-md, when &lt;768 = 100%</div>
+          <div class="col-lg bg-primary">col-lg, when &lt;992 = 100%</div>
+          <div class="col-xl bg-info text-black">col-xl, when &lt;1200 = 100%</div>
+          <div class="col-xxl bg-secondary">col-xxl, when &lt;1400 = 100%</div>
+        </div>
+
+        <div class="row bg-secondary">
+          <!-- 不帶數字的 `col-{breakpoint}` 可視同當下 media queries 狀態為 col 而自動分配寬度 -->
+          <div class="col border-white bg-warning text-black">col</div>
+          <div class="col-sm border-white bg-info text-black">col-sm</div>
+          <div class="col-md border-white bg-warning text-black">col-md</div>
+        </div>
+
+        <div class="row bg-secondary">
+          <!-- 如果某 media queries 當下找不到 col 公式會導致 100% 滿版（除非有需求否則應避免） -->
+          <div class="col-xl-6 border-white">col-xl-6</div>
+          <div class="col-xl-3 border-white">col-xl-3</div>
+        </div>
+
+        <div class="row">
+          <div class="col col-xl-4">col<br>col-xl-4</div>
+          <div class="col-xl-4">col-xl-4</div>
+          <div class="col col-xl-4">col<br>col-xl-4</div>
+        </div>
+
+        <div class="row">
+          <!-- 透過公式的混和與各自 media queries 的 width 值不同，形成響應式的多欄位控制 -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">col-12<br>col-sm-6<br>col-md-4<br>col-lg-3<br>col-xl-2
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- 響應斷點本身有向上相容（優先權）的效果，所以相同數字可省略  -->
+          <div class="col-sm-4">col-sm-4</div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">col-sm-4<br>col-md-4<br>col-lg-4<br>col-xl-4</div>
+          <div class="col-sm-4 col-md-4 col-lg-4 col-xl-6">col-sm-4<br>col-md-4<br>col-lg-4<br><span
+              class="text-warning">col-xl-6</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto">
+      <h5 class="text-warning">【響應斷點 breakpoints - 行列指定 Row columns | 欄位參數】<span class="fs-6 text-white">例：.row-cols-*
+        </span></h5>
+      <p>
+        row 元素添加 .row-cols-* 能額外指定單行內的欄元素筆數，控制一個 row 需多少 col 來排滿，其原理為指定經計算後之 width 值，適合搭配自動均分（無數字）的 .col 使用。
+        <br>另還有 .row-cols-auto 能指定 row 內的 col 全都是採用內容寬計算。<br>
+      </p>
+
+      <style>
+        .row>div {
+          background: #904e6f;
+          border: 1px solid #bfbfbf;
+          padding: 2px;
+        }
+
+        .row {
+          margin-bottom: 20px;
+        }
+      </style>
+      <div class="container">
+        <!-- 預設 col 是吃剩下的空間再均分 -->
+        <span>網格參數</span>
+        <div class="mt-2 row mb-5 border border-secondary">
+          <div class="col-6">col-6</div>
+          <div class="col">col</div>
+        </div>
+
+        <!-- row-cols-2 導致 col 有 width：60%，( 等於 12 / 2 格數）  -->
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-2 導致
+          col 有 width：60%，( 等於 12 / 2 格數）</span>
+        <div class="mt-2 row row-cols-2 border border-secondary">
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-2</div>
+        </div>
+
+        <!-- row-cols-3 導致 col 有 width：30%，( 等於 12 / 3 格數）  -->
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-3 導致
+          col 有 width：40%，( 等於 12 / 3 格數）</span>
+        <div class="mt-2 row row-cols-3 border border-secondary">
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-3</div>
+        </div>
+
+        <!-- row-cols-4 導致 col 有 width：30%，( 等於 12 / 4 格數）  -->
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-4 導致
+          col 有 width：30%，( 等於 12 / 4 格數）</span>
+        <div class="mt-2 row row-cols-4 border border-secondary">
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-4</div>
+        </div>
+
+        <!-- row-cols-5 導致 col 有 width：24%，( 等於 12 / 5 格數）  -->
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-5 導致
+          col 有 width：24%，( 等於 12 / 5 格數）</span>
+        <div class="mt-2 row row-cols-5 border border-secondary">
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-5</div>
+        </div>
+
+        <!-- row-cols-6 導致 col 有 width：20%，( 等於 12 / 6 格數）  -->
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-6 導致
+          col 有 width：20%，( 等於 12 / 6 格數）</span>
+        <div class="mt-2 row row-cols-6 border border-secondary">
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-6</div>
+        </div>
+
+        <span class="text-warning">欄位參數</span><span class="my-width-025"></span><span class="text-white">row-cols-auto
+          導致 col 全都是內容寬設定</span>
+        <div class="mt-2 row row-cols-auto border border-secondary">
+          <!-- row-cols-auto 導致 col 全都是內容寬設定 -->
+          <div class="col-6 border-warning">col-6</div>
+          <div class="col border-warning">col with<br>row-cols-auto</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="mt-3 p-3 border border-secondary rounded-4 border-warning border-5">
+      <h2 class="text-warning">【<span class="text-warning">欄位參數 .row-cols-*</span><span class="text-white"><span
+            class="my-width-015"></span>
+          <sapn class="fw-bold fst-italic">V.S.</sapn><span class="my-width-015"></span>
+        </span><span class="text-warning">網格參數 .col-md-</span>】<span class="my-width-214"></span><span
+          class="fs-1 text-white">重要!! </span></h2>
+      <p>row-cols- { breakpoint }-* 能在指定的響應下做處理。取代過去瑣碎的個別 col 做斷點處理。</p>
+      <p>
+        使用 Bootstrap 格線系統可以很方便的排出多欄式的版面，然而每個子欄的 class 都要不斷地加上 col-md-*、col-xl-* ，似乎有些麻煩。
+        <br>我們可以直接在父層設定後，使子層能夠依照父層的設定進行排版。
+        <a class="text-warning" href="https://guiblogs.com/bootstrap-row-cols/" target="_blank">透過 row-cols，Bootstrap 格線
+          class 免重覆設定！</a>
+        <img class="img-fluid m-5 d-flex mx-auto" src="img/p6.png">
+      </p>
+      <p>
+        <span class="text-warning fs-3">欄位參數快速寫法</span><br>
+        &lt;div class=&quot;<span class="text-white">container</span>&quot;&gt;<br>
+    <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-white">row</span><span class="my-width-015"></span><span class="text-danger">row-cols-2</span><span class="my-width-015"></span><span class="text-primary">row-cols-sm-2</span><span class="my-width-015"></span><span class="text-warning">row-cols-md-4</span><span class="my-width-015"></span><span class="text-info">row-cols-lg-4</span><span class="my-width-015"></span><span class="text-success">row-cols-xl-4</span><span class="my-width-015"></span><span class="text-white">row-cols-xxl-6</span><span class="my-width-015"></span><span class="text-warning">row-cols-auto</span>&quot;&gt;<br>
+        <span class="my-width-050"></span>&lt;div class=&quot;<span class="text-white">col</span>&quot;&gt;<span class="my-width-005"></span>&lt;/div&gt;<br>
+    <span class="my-width-025"></span>&lt;/div&gt;<br>
+&lt;/div&gt;
+      </p>
+
+      <p>
+        <span class="text-white fs-3">網格參數快速寫法 - 1</span><br>
+        &lt;div class=&quot;<span class="text-warning">container</span>&quot;&gt;<br>
+    <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-warning">row</span>&quot;&gt;
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-8</span>&quot;&gt;&lt;/div&gt;   
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-4</span>&quot;&gt;&lt;/div&gt;   
+      
+      <br><span class="my-width-025"></span>&lt;/div&gt;
+  
+      <br><br>
+      <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-warning">row</span>&quot;&gt;
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-sm</span>&quot;&gt;&lt;/div&gt; 
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-sm</span>&quot;&gt;&lt;/div&gt;       
+      <br><span class="my-width-025"></span>&lt;/div&gt;
+
+      <br><br>
+      <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-warning">row</span>&quot;&gt;
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-6<span class="my-width-015"></span>col-sm-8<span class="my-width-015"></span>col-md-8</span>&quot;&gt;&lt;/div&gt; 
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-6<span class="my-width-015"></span>col-sm-4<span class="my-width-015"></span>col-md-4</span>&quot;&gt;&lt;/div&gt;       
+      <br><span class="my-width-025"></span>&lt;/div&gt;
+
+      <br><br>
+      <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-warning">row</span>&quot;&gt;
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-6<span class="my-width-015"></span>col-sm-8<span class="my-width-015"></span>col-md-8</span>&quot;&gt;&lt;/div&gt; 
+      <br><span class="my-width-050"></span>&lt;div class=&quot;<span class="text-warning">col-6<span class="my-width-015"></span>col-sm-auto<span class="my-width-015"></span>col-md-auto</span>&quot;&gt;&lt;/div&gt;       
+      <br><span class="my-width-025"></span>&lt;/div&gt;
+
+      <br>&lt;/div&gt;
+      </p>
+
+      <span class="text-white fs-3">網格參數快速寫法 - 2 ( 所有斷點 )</span><br>
+      &lt;div class=&quot;<span class="text-warning">container</span>&quot;&gt;
+      <br>
+      <span class="my-width-025"></span>&lt;div class=&quot;<span class="text-warning">row</span>&quot;&gt;
+      <br><span class="my-width-050"></span>&lt;div class=&quot; 
+
+      <select name="col" id="col-select">
+        <option value="col">col</option> 
+        <option value="col-12">col-12</option>
+        <option value="col-sm-12">col-sm-12</option>
+        <option value="col-md-6">col-md-6</option>
+        <option value="col-lg-8">col-lg-8</option>
+        <option value="col-xl-8">col-xl-8</option>
+        <option value="col-xxl-6">col-xxl-6</option>
+      </select>      
+      &quot;&gt;&lt;/div&gt; 
+      <br><span class="my-width-025"></span>&lt;/div&gt;
+
+      <br>&lt;/div&gt;
+
+      <br><br>註： col- 就是 auto ( xs < 576px )
+      <table class="table table-bordered my-border-42464c text-light">
+        <thead class="text-info text-center">
+          <tr>
+            <th></th>
+            <th>xs &lt;576px</th>
+            <th>sm ≥ 576px</th>
+            <th>md ≥ 768px</th>
+            <th>lg ≥ 992px</th>
+            <th>xl ≥ 1200px</th>
+            <th>xxl ≥ 1400px</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="my-bg-color-34383d text-center">
+            <th>Container max-width</th>
+            <td>None (auto)</td>
+            <td>540px</td>
+            <td>720px</td>
+            <td>960px</td>
+            <td>1140px</td>
+            <td>1320px</td>
+          </tr>
+          <tr class="text-center">
+            <th class="text-start">Class prefix 類前綴</th>
+            <td>.col-</td>
+            <td>.col-sm-</td>
+            <td>.col-md-</td>
+            <td>.col-lg-</td>
+            <td>.col-xl-</td>
+            <td>.col-xxl-</td>
+          </tr>
+          <tr class="text-center my-bg-color-34383d">
+            <th class="text-start"># of columns 列</th>
+            <td colspan="6">12</td>
+          </tr>
+        </tbody>
+      </table>
+        </p>
+
+
+
+
+    </div>
+
+
+    <div class="container mt-5 pb-3 mx-auto">
+      <h5 class="text-warning">【對齊 Alignment - row 垂直對齊】<span class="fs-6 text-white">( 使用 flexbox 對齊垂直。align-items-*
+          需寫在 row )</span></h5>
+      <p>row 本身就是一個 display：flex 父容器以及 col 為子項目。因此有些 class 參數與 flexbox 相同無差別。如果你已很熟 flexbox 彈性盒就可採同概念能對應到本操作，只是差別於直接以
+        className 來添加 flex 屬性。</p>
+
+      <style>
+        .bd-example-row-flex-cols .row {
+          min-height: 6rem;
+          background-color: #707070;
+        }
+      </style>
+      <div class="bd-example-row-flex-cols">
+        <div class="row align-items-start">
+          <div class="col">
+            align-items-start ( 整體垂直之靠上對齊 )
+          </div>
+          <div class="col">
+            align-items-start ( 整體垂直之靠上對齊 )
+          </div>
+          <div class="col">
+            align-items-start ( 整體垂直之靠上對齊 )
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col">
+            align-items-center ( 整體垂直之靠中對齊 )
+          </div>
+          <div class="col">
+            align-items-center ( 整體垂直之靠中對齊 )
+          </div>
+          <div class="col">
+            align-items-center ( 整體垂直之靠中對齊 )
+          </div>
+        </div>
+        <div class="row align-items-end">
+          <div class="col">
+            align-items-center ( 整體垂直之靠下對齊 )
+          </div>
+          <div class="col">
+            align-items-center ( 整體垂直之靠下對齊 )
+          </div>
+          <div class="col">
+            align-items-center ( 整體垂直之靠下對齊 )
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .my-box-1 {
+        background-color: #636363;
+      }
+    </style>
+
+    <div class="container pb-3 mx-auto">
+      <h5 class="text-warning">【對齊 Alignment - row 水平對齊】<span class="fs-6 text-white"> ( 使用 flexbox
+          對齊垂直。justify-content-* 需寫在 row )</span></h5>
+      <div class="container my-box-1">
+        <div class="row mt-3 justify-content-start">
+          <div class="col-4 bg-success">
+            justify-content-start ( 整體水平之靠左對齊 )
+          </div>
+          <div class="col-4 bg-success">
+            justify-content-start ( 整體水平之靠左對齊 )
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-4 bg-success">
+            justify-content-center ( 整體水平之靠中對齊 )
+          </div>
+          <div class="col-4 bg-success">
+            justify-content-center ( 整體水平之靠中對齊 )
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-4 bg-success">
+            justify-content-end ( 整體水平之靠右對齊 )
+          </div>
+          <div class="col-4 bg-success">
+            justify-content-end ( 整體水平之靠右對齊 )
+          </div>
+
+        </div>
+        <div class="row justify-content-around">
+          <div class="col-5 bg-success">
+            justify-content-around ( 整體水平均分對齊，兩側留間格 )
+          </div>
+          <div class="col-5 bg-success">
+            justify-content-around ( 整體水平均分對齊，兩側留間格 )
+          </div>
+        </div>
+        <div class="row justify-content-between">
+          <div class="col-5 bg-success">
+            justify-content-between ( 整體水平均分對齊，兩側為子項目 )
+          </div>
+          <div class="col-5 bg-success">
+            justify-content-between ( 整體水平均分對齊，兩側為子項目 )
+          </div>
+        </div>
+        <div class="row justify-content-evenly">
+          <div class="col-5 bg-success">
+            justify-content-evenly ( 整體水平均分對齊，所有間格一致寬 )
+          </div>
+          <div class="col-5 bg-success">
+            justify-content-evenly ( 整體水平均分對齊，所有間格一致寬 )
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .my-min-height-075 .row {
+        min-height: 7.5rem;
+      }
+    </style>
+    <div class="bd-example-row-flex-cols">
+      <div class="container mt-2 pb-2 mx-auto">
+        <h5 class="text-warning">【對齊 Alignment - col 水平對齊 】<span class="fs-6 text-white">( 使用 flexbox 對齊垂直。align-self-*
+            需寫在 col )</span></h5>
+        <div class="my-min-height-075">
+          <div class="row">
+            <div class="col align-self-start">
+              align-self-start ( 個別垂直之起始為對齊 )
+            </div>
+            <div class="col align-self-center">
+              align-self-center ( 個別垂直之中心為對齊 )
+            </div>
+            <div class="col  align-self-end">
+              align-self-end ( 個別垂直之結尾為對齊 )
+            </div>
+          </div>
+        </div>
+        <p class="text-warning">所以你可以輕易控制出以下行為：
+        <ul>
+          <li class="text-white">設定 row 垂直對齊：<span class="my-width-005"></span>利用 .align-items- * <span
+              class="my-width-045"></span> 整體 - 控制垂直</li>
+          <li class="text-white">設定 row 水平對齊：<span class="my-width-005"></span>利用 .justify-content- * <span
+              class="my-width-021"></span> 整體 - 控制水平</li>
+          <li class="text-warning">設定 col <span class="my-width-006"></span>水平對齊：<span class="my-width-005"></span>利用
+            .align-self- * <span class="my-width-061"></span> 個別 - 控制水平</li>
+        </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【欄的換行與斷行】<span class="fs-6 text-white">如果 12 個以上的欄位於單獨一行內，每一組額外欄（作為一個單元）將換新的一行。</span>
+      </h5>
+      <ul>
+        <li>換行：任何超過 12 之欄位計算將自動進行 wrap 效果。</li>
+        <li>斷行：故意產生 <span class="text-warning">width : 100% </span>的空白區塊使得欄位計算無法順利滿足 12 欄位計算。</li>
+      </ul>
+
+      <div class="container">
+        <div class="row border border-secondary">
+          <p>如果總和硬要超過 12，會擠壓到下一行繼續輸出。呈現出欄位的換行效果</p>
+          <div class="col-6">col-6</div>
+          <div class="col-3">col-3</div>
+          <div class="col-6">col-6</div>
+        </div>
+
+        <div class="row border border-secondary">
+          <p>如果想強迫換行可用`div.w-100` 產生類似 `&lt;br&gt;` 效果，原理只是塞滿版但看不到的 box</p>
+          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+          <div class="w-100 bg-dark text-white-50">w-100 強制下一列換行</div>
+          <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+        </div>
+
+        <div class="row border border-secondary">
+          <p>可透過 display 通用操作控制該空白區塊的運作條件</p>
+          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+          <div class="w-100 d-none d-md-block bg-dark text-white-50">w-100、 d-none、 d-md-block 強制下一列在 md 斷點及以上斷點換行</div>
+          <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-5 pb-5 mx-auto">
+      <h5 class="text-warning" id="order-col">【排序 Order classes - <span class="text-white">for col use</span>】<a
+          class="text-danger text-decoration-none" href="#order-first">點擊參考類似屬性 - 【order 屬性 ( in 子項目）】</a></h5>
+      <p class="fs-6 text-white">使用 .col.order-* 來控制欄位的出場順序，亦透過 flex 的機制運作，且只能編寫於子項目上使用。</p>
+      <ul>
+        <li>.order- * 與 order：* <span class="my-width-025"></span>- 依據數字由小排序位置，可以是 - 1 ( 最前 ) 或 13 ( 最後 )</li>
+        <li>.order-first <span class="my-width-071"></span><span class="my-width-025"></span>- 更改位置為起頭</li>
+        <li>.order-end <span class="my-width-071"></span><span class="my-width-025"></span>- 更改位置為結尾</li>
+      </ul>
+      <div class="pt-4 container">
+        <p class="m-0 text-warning">使用 .order-class 來控制內容中可見內容順序，這些 class 是響應式的，所以可以設定 order 在不同斷點上 ( 如
+          .order-1.order-md-2 )，包含支援 1 ~ 5 及不同的中斷點。</p>
+        <div class="row">
+          <div class="col bg-primary">
+            <span class="text-dark">不應用任何 order</span> 第 1 個在 DOM 中
+          </div>
+          <div class="col order-5 bg-primary">
+            <span class="text-dark">order-5</span> 第 2 個在 DOM 中，最後排序
+          </div>
+          <div class="col order-1 bg-primary">
+            <span class="text-dark">order-1</span> DOM 中的第 3 個，排序為 1
+          </div>
+        </div>
+      </div>
+
+      <div class="container mt-n4">
+        <div class="row">
+          <div class="col order-last ">
+            <span class="text-black">order-last</span> 在 DOM 中最先，最後排序
+          </div>
+          <div class="col">
+            DOM 中的第 2 個，無排序
+          </div>
+          <div class="col order-first">
+            <span class="text-black">order-first</span> DOM 中的第 3 個，第 1 個排序
+          </div>
+        </div>
+      </div>
+
+      <h5 class="text-warning">【偏移 Offsetting columns】<span class="fs-6 text-white">欄位的偏移提供了 .offset-* 的方式與透過 Margin
+          通用操作共兩種來達到變化性。前者將 grid 的欄位調整推移，後者為快速定位。</span></h5>
+      <p class="mt-4">使用 offset-* 或 offset-{ breakpoint }-* 來推移 col 的定位處（建議優先考量）。類似有個假想的不存在 col 幫忙吃掉該分配位置( 抵銷 )。</p>
+      <div class="container">
+        <div class="row border border-secondary">
+          <div class="col-md-4">.col-md-4</div>
+          <div class="col-md-4 offset-md-4">.col-md-4<span class="my-width-025"></span>.offset-md-4</div>
+        </div>
+
+        <div class="row border border-secondary">
+          <div class="col-md-3 offset-md-3">.col-md-3<span class="my-width-025"></span>.offset-md-3</div>
+        </div>
+
+        <div class="row border border-secondary">
+          <div class="col-md-6 offset-md-3">.col-md-6<span class="my-width-025"></span>.offset-md-3</div>
+        </div>
+      </div>
+
+      <h5 class="text-warning">【Margin 通用操作】</h5>
+      <p>利用 margin 去微調 col 位置，可參閱官方介紹的 utilities >
+        Spacing 單元說明之 margin 參數來設定。此外另提供快速推底效果</p>
+      <ul>
+        <li>.mt-auto 提供 margin-top：auto，效果為於 top 位置大量留白推頂。( 上邊留白 )</li>
+        <li>.mb-auto 提供 margin-bottom：auto，效果為於 bottom 位置大量留白推底。( 下邊留白 )</li>
+        <li>.ms-auto 提供 margin-left：auto，效果為於 start 位置大量留白推頂。( 左邊留白 )</li>
+        <li>.me-auto 提供 margin-right：auto，效果為於 end 位置大量留白推底。( 右邊留白 )</li>
+      </ul>
+
+      <div class="container">
+        <div class="row border border-secondary">
+          <div class="col-md-4">.col-md-4</div>
+          <div class="col-md-4 ms-auto">.col-md-4 .ms-auto<span class="my-width-025"></span><span
+              class="text-warning">左邊留白</span></div>
+        </div>
+        <div class="row border border-secondary">
+          <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto<span class="my-width-025"></span><span
+              class="text-warning">左邊留白</span></div>
+          <div class="col-md-3 ms-md-auto">.col-md-3 .ms-md-auto<span class="my-width-025"></span><span
+              class="text-warning">左邊留白</span></div>
+        </div>
+        <div class="row border border-secondary">
+          <div class="col-auto me-auto">.col-auto .me-auto<span class="my-width-025"></span><span
+              class="text-warning">右邊留白</span></div>
+          <div class="col-auto">.col-auto</div>
+        </div>
+      </div>
+
+      <h5 class="text-warning">【獨立欄位 standalone column】</h5>
+      <p>在第五版開始 column 的原理改採用 flex：0 0 auto 並改以 width 指定比例做為核心之空間計算。因此在沒有 row 的容器規劃下，仍可保持 width 的基本效果 ( block 型態）。
+        <br>換言之能在一般的結構下亦可快速指定區塊的總寬之比例，舉例文繞圖的使用方式如下：
+      </p>
+      <div class="container mt-2 p-4 mx-auto">
+        <h5 class="text-warning">【文繞圖】<span class="fs-6 text-white"> ( 注意：使用浮動元素建議外層多增加並使用 .clearfix 來包覆，避免發生浮動錯位可能。
+            )</span>
+        </h5>
+        <div class="clearfix">
+          <img src="img/marklin.webp" class="mb-3 ms-md-3 ol-md-2 float-md-end img-fluid">
+          <p class="text-primary">現在瀏覽器已全面支援WebP的影像格式，可直接使用img標籤將圖片載入。<br><br>
+            WebP是由Google所推出的，而這個影像格式，只能說黑科技，能讓有效的壓縮影像的檔案大小，甚至還能保有高品質的影像，早期當要把影像轉存成WebP時，只能透過指令的方式，
+            將影像轉存成WebP，且在轉存完畢後，也無法使用一般的img標籤，載入webp的影像格式，主要就在於瀏覽器還不認得webp的這個影像格式，因此就得使用HTML5的picture的標籤，
+            來將圖片給載入，但有使用過Cloudflare的朋友，當啟用圖片CDN的功能時，會發現到Cloudflare就會自動將照片轉編碼為webp，但實際上照片的副檔名還是jpg或png，而把照片
+            另存時就會發現到副檔名為webp。<br><br>
+            隨著瀏覽器不斷的更新後，現在無論是Chrome、Edge、Firefox、Safari…都以全面支援webp，這也意謂著，你可以將webp的圖片格式，直接透過img標籤將它給載入，或是也可透過Cloudflare，將轉存為wepb的副檔名修改成jpg，再把它載入到網頁中，這也是可以的
+          <p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【間格 Gutters】</h5>
+      <p>前面 Grid 已知道會在 .container 產生的 padding：0 0.75rem , .row 產生的 margin：0 -0.75rem ，以及 col-* 產生的 padding：0
+        0.75rem，三者之前兩項會互相抵消使得 col 能對其整個 container 兩側，如此欄位之間的間格稱呼為 Gutters。</p>
+
+      <h5 class="text-warning">【水平間格】</h5>
+      <span class="text-warning">預設左右各為 0.75rem（左右 12px)，如果需要加大或調整水平之間的 Gutters，你需要：</span>
+      <ol class="mt-2">
+        <li>將 .container 的 padding 加大，利用 px-* 之通用操作達到。( 或更改為 .overflow-hidden ，其效果差異於間格的兩側與欄位之間有所不同 )</li>
+        <li>將 .row 的 margin 負值 加大與前項目同值，利用專用公式 gx-* 達到，數字 0 ~ 5 且與前者數據不同因此需多嘗試媒合度。</li>
+        <li>讓 .col 的預設 padding 效果不變（與其他未影響的 container 仍切齊）。</li>
+        <li>若欄位內距仍想加大，你需要的是額外添加子元素進行 padding 調整。</li>
+      </ol>
+
+      <p class="mt-5 text-warning">.gx-* 類別可以用來控制水平 gutter 的寬度。
+        <br>若使用較大的 gutters 且要避免不必要的溢出，則需在 .container 或 .container-fluid 的父層使用匹配的 padding。<span
+          class="text-white"></span>
+      <h3 class="mt-n3 text-white">Container + px-4<span class="my-width-025"></span><span class="fs-6 text-warning">(
+          將.container 的 padding 加大，利用 px-* 之通用操作達到。 )</span></h3>
+      </p>
+      <div class="mt-n3 container px-4">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-2">自定義填充列</div>
+          </div>
+          <div class="col">
+            <div class="p-2">自定義填充列</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-3 text-warning">另一種解決方案是使用 .overflow-hidden 包圍 .row :
+      <h3 class="mt-n3 text-white">Container + overflow hidden<span class="my-width-025"></span><span
+          class="fs-6 text-warning">( 更改為 .overflow-hidden ，其效果差異於間格的兩側與欄位之間有所不同 )</span></h3>
+      </p>
+      <div class="mt-n3 container overflow-hidden">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-2">自定義填充列</div>
+          </div>
+          <div class="col">
+            <div class="p-2">自定義填充列</div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-3 text-warning">【垂直間格】<span class="fs-6 text-white">與前面原理相同，其方向為縱向。且調整重點於 .row ，使用 .gy-* 進行調整，數字 0 ~
+          5。</span></h5>
+      <h3 class="text-white">Container + overflow hidden<span class="my-width-025"></span><span
+          class="fs-6 text-warning"></span></h3>
+      <div class="container overflow-hidden">
+        <div class="row gy-5">
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-3 text-warning">【水平垂直間格】<span class="fs-6 text-white">或者兩者一同調整 Gutter 空間，同樣在 .row 處規劃 .g-*
+          間格公式。</span></h5>
+      <h3 class="text-white">Container + overflow hidden</h3>
+      <div class="container overflow-hidden">
+        <div class="row g-5">
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+          <div class="col-6">
+            <div class="p-3">自定義填充列</div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-3 text-warning">【行列指定的響應組合】<span
+          class="fs-6 text-white">間格的調整參數也提供響應公式，下列範例說明如何搭配了行列指定的響應追加間格調整。</span></h5>
+      <div class="mt-3 container">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+          <div class="col">
+            <div class="p-3">Row column</div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-4 text-warning">【無間格 No Gutter】</h5>
+      <p>預設情況下會有 container 的 padding 12px 與 row
+        的 margin -12px。你可以選擇該結構取消間格效果，在 .row 上添加 .g-0 即能清除間格。</p>
+      <div class="container">
+        <h3>DEFAULT GUTTER</h3>
+        <div class="row border">
+          <div class="col-sm-6 col-md-8">.col-sm-6 .col-md-8</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        </div>
+      </div>
+      <div class="mt-n2 container">
+        <h3>NO GUTTER</h3>
+        <div class="row g-0 border">
+          <div class="col-sm-6 col-md-8">.col-sm-6 .col-md-8</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto">
+      <h5 class="mt-5 text-warning">【排版類的通用操作 display & flexbox】</h5>
+      <p>在排版單元可以先學會部分重要的通用操作，包含 display、flexbox、margin、padding、visibility 為主要基本 CSS。</p>
+
+      <h5 class="text-warning">【Display 操作】<span class="fs-6 text-white">同等控制 CSS 的 display 屬性，參考 官網範例，並支援響應式中斷的
+          display，通常是以下寫法：</span></h5>
+      <p>Display 類別可套用所有中斷點，從 xs 到 xxl 都是。而這些是從最小寬度 min-width：0; 開始運用，因此預設不受 media query 限制，然而其餘的斷點都包含縮寫。
+        <br>
+        因此，這些 class 使用以下格式來命名：
+      </p>
+      <ul class="text-warning">
+        <li>.d - { value } <span class="text-white">for</span> xs</li>
+        <li>.d - { breakpoint } - { value } <span class="text-white">for</span> sm、md、lg、xl、xxl。</li>
+      </ul>
+      <span>value 為以下其中一個：</span>
+      <ul class="text-warning">
+        <li>none</li>
+        <li>inline</li>
+        <li>inline-block</li>
+        <li>block</li>
+        <li>grid</li>
+        <li>table</li>
+        <li>table-cell</li>
+        <li>table-row</li>
+        <li>flex</li>
+        <li>inline-flex</li>
+      </ul>
+      <p>
+        display value 可以透過更改 $displays 變數、重新編譯 SCSS 來改變。這些 media queries 會影響等於或 大於 中斷點的螢幕設置。<br>
+        舉例來說，.d-lg-none 會在 lg、xl、xxl 的螢幕上設置 display：none;。
+      </p>
+      <div class="p-3 border border-secondary">
+        <div class="d-inline p-2 bg-primary text-white">&lt; div class = &quot; d-inline &quot; &gt;</div>
+        <div class="d-inline p-2 bg-danger text-white">&lt; div class = &quot; d-inline &quot; &gt;</div> <span
+          class="my-width-025"></span>
+      </div>
+      <div class="p-3 border border-secondary">
+        <span class="d-block p-2 bg-primary text-white">&lt; span class =
+          &quot; d-block &quot; &gt;<span class="my-width-025"></span></span>
+        <span class="d-block p-2 bg-danger text-white">&lt; span class =
+          &quot; d-block &quot; &gt;<span class="my-width-025"></span></span>
+      </div>
+
+      <h5 class="mt-5 text-warning">【隱藏元素】</h5>
+      <ul>
+        <li>為了更快速且友善的進行移動設備開發，請使用響應式的 display class 來顯示和隱藏元件。避免創建完全不同版本的同一個網站，而是按照每個螢幕尺寸隱藏元素。</li>
+        <li>要隱藏元素，只需對任何響應式畫面使用 <span class="text-warning">.d-none</span> 或是 <span class="text-warning">.d - { sm、 md、
+            lg、 xl、 xxl } - none</span> 其中之一。</li>
+        <li>如果只想在給定的螢幕區間上顯示元素，您可以將一個 <span class="text-warning">.d-*-none</span> class 和一個 <span
+            class="text-warning">.d-*-*</span> class 組合，例如 <span
+            class="text-warning">.d-none&nbsp;&nbsp;&nbsp;.d-md-block&nbsp;&nbsp;&nbsp;.d-xl&nbsp;&nbsp;&nbsp;.d-xxl-none</span>
+          將隱藏所有屏幕尺寸的元素，但中型和大型設備除外。</li>
+      </ul>
+
+      <div class="container">
+        <div class="row">
+          <div class="col border-0">
+            <table class="table">
+              <thead>
+                <tr class="bg-dark text-warning">
+                  <th class="text-end">Screen size</th>
+                  <th class="text-start">Class</th>
+                </tr>
+              </thead>
+              <tbody class="text-white">
+                <tr>
+                  <td class="text-end">Hidden on all</td>
+                  <td class="text-start">.d-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on xs</td>
+                  <td class="text-start">.d-none .d-sm-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on sm</td>
+                  <td class="text-start">.d-sm-none .d-md-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on md</td>
+                  <td class="text-start">.d-md-none .d-lg-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on lg</td>
+                  <td class="text-start">.d-lg-none .d-xl-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on xl</td>
+                  <td class="text-start">.d-xl-none .d-xxl-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Hidden only on xxl</td>
+                  <td class="text-start">.d-xxl-none</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col border-0">
+            <table class="table">
+              <thead>
+                <tr class="bg-dark text-white">
+                  <th class="text-end">Screen size</th>
+                  <th class="text-start">Class</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white text-dark">
+                <tr>
+                  <td class="text-end">Visible on all</td>
+                  <td class="text-start">.d-block</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on xs</td>
+                  <td class="text-start">.d-block .d-sm-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on sm</td>
+                  <td class="text-start">.d-none .d-sm-block .d-md-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on md</td>
+                  <td class="text-start">.d-none .d-md-block .d-lg-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on lg</td>
+                  <td class="text-start">.d-none .d-lg-block .d-xl-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on xl</td>
+                  <td class="text-start">.d-none .d-xl-block .d-xxl-none</td>
+                </tr>
+                <tr>
+                  <td class="text-end">Visible only on xxl</td>
+                  <td class="text-start">.d-none .d-xxl-block</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>&lt;div class = &quot; <span class="text-warning">d-lg-none</span> &quot;&gt; <span class="text-warning">隱藏在
+            lg 和更寬的屏幕上</span> &lt;/div&gt;</li>
+        <li>&lt;div class = &quot; <span class="text-warning">d-none&nbsp&nbsp&nbspd-lg-block</span> &quot;&gt; <span
+            class="text-warning">隱藏在小於 lg 的屏幕上</span> &lt;/div&gt;</li>
+      </ul>
+    </div>
+
+    <div class="p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【Flex 操作】</h5>
+      <p>由於 Grid 網格系統採用 flex 原理設計，因此可自行規劃 flex 規則機制。注意的是，如果不是應用在 .row 的元素，你需先持有 display 單元設定 display 為 flex 或
+        inline-flex ，接著才開始對 flexbox 做相關操作（反之本就在 .row 就不需設定 display 即可使用）。</p>
+
+
+      <div class="container mt-n2 border-1 border-bottom border-danger">
+        <div class="row">
+          <div class="col-xl-4 bg-dark border-0 text-start">
+            <span class="text-warning">用 display 而不是 flex 或 inline-flex</span><br>
+            .d-flex <br>
+            .d-inline-flex <br><br>
+          </div>
+
+          <div class="col-xl-8 bg-dark border-0 text-start border-0 border-start border-secondary ps-5">
+            <span class="text-warning">響應規則公式：</span>.d-flex- { breakpoint } - { value } 、 .d-inline-flex- { breakpoint
+            } - { value } <br><br>
+            <span class="text-warning">breakpoint：</span></span>sm、 md、lg、xl、xxl<br>
+            <span class="text-warning">value：</span><span class="my-width-041"></span>flex、inline-flex<br>
+            <span class="text-warning">例：</span><span class="my-width-065"></span>.d-md-flex、d-xl-inline-flex
+          </div>
+        </div>
+      </div>
+
+
+      <h5 class="mt-3 text-warning">【Flex-direction 主軸方向性 ( in 父容器 ）】</h5>
+      <p>flex-direction 控制容器的排列方向性，可控制水平左起、水平右起、垂直上起、垂直下起等主要方向。支援響應式中斷 breakpoint 應用。</p>
+      <div class="container mb-n1">
+        <div class="row">
+          <div class="col-xl-4 bg-dark border-0 text-start">
+            <span class="text-white">.flex-row <span class="my-width-110"></span>：水平 & 左起</span><br>
+            <span class="text-white">.flex-row-reverse <span class="my-width-050"></span>：水平 & 右起</span><br>
+            <span class="text-warning">.flex-column <span class="my-width-083"></span>：垂直 & 上起</span><br>
+            <span class="text-warning">.flex-column-reverse <span class="my-width-023"></span>：垂直 & 下起</span>
+          </div>
+          <div class="col-xl-8 bg-dark text-start border-0 border-start border-secondary ps-5">
+            <span class="text-warning">響應規則公式：</span>.flex - { value } 、.flex- { breakpoint } - { value }<br><br>
+            <span class="text-warning">breakpoint：</span></span>sm、 md、lg、xl、xxl<br>
+            <span class="text-warning">value：</span><span
+              class="my-width-041"></span>row、row-reverse、column、column-reverse<br>
+            <span class="text-warning">例：</span><span class="my-width-065"></span>.flex-md-flex、flex-xl-inline-flex
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row bd-highlight mb-3 border border-secondary">
+        <div class="p-2 bd-highlight">項目 1</div>
+        <div class="p-2 bd-highlight">項目 2</div>
+        <div class="p-2 bd-highlight">項目 3</div>
+        <div class="p-2"><span class="text-warning">( .flex-row )</span></div>
+      </div>
+      <div class="mb-3 d-flex flex-row-reverse bd-highlight border border-secondary">
+        <div class="p-2 bd-highlight">項目 1</div>
+        <div class="p-2 bd-highlight">項目 2</div>
+        <div class="p-2 bd-highlight">項目 3</div>
+        <div class="p-2"><span class="text-warning">( .flex-row-reverse )</span></div>
+      </div>
+
+      <div class="d-flex flex-column bd-highlight mb-3 border border-secondary">
+        <div class="px-2 bd-highlight">項目 1 <span class="my-width-025"></span><span class="text-warning">( .flex-column
+            )</span></div>
+        <div class="px-2 bd-highlight">項目 2</div>
+        <div class="px-2 bd-highlight">項目 3</div>
+      </div>
+      <div class="d-flex flex-column-reverse bd-highlight border border-secondary">
+        <div class="px-2 bd-highlight">項目 1 <span class="my-width-025"></span><span
+            class="text-warning">(.flex-column-reverse )</span>
+        </div>
+        <div class="px-2 bd-highlight">項目 2</div>
+        <div class="px-2 bd-highlight">項目 3</div>
+      </div>
+
+      <h5 class="mt-5 pt-4 text-warning border-1 border-top border-danger">【justify-content 調整內容 ( in 父容器 ）】<span
+          class="fs-6 text-white">以 Y 軸為中心，平行 X 軸，左右移動。</span></h5>
+      <p>justify-content 控制子項目的靠齊方式，可控制向左靠齊（根據 flex-direction 起始處）、向右靠齊（結尾處）、置中對齊、分散兩側、平均分散（每個子項目兩側都等寬）</p>
+      <div class="container pb-5 border-1 border-bottom border-danger">
+        <div class="row">
+          <div class="col-md-6 bg-dark border-0 text-start">
+            <span class="text-white">.justify-content-start <span class="my-width-042"></span>：向左（或起始處）靠齊</span><br>
+            <span class="text-white">.justify-content-end <span class="my-width-048"></span>：向右（或結尾處）靠齊</span><br>
+            <span class="text-white">.justify-content-center <span class="my-width-030"></span>：置中對齊</span><br>
+            <span class="text-warning">.justify-content-between <span class="my-width-013"></span>：均分對齊，兩端無間格</span><br>
+            <span class="text-warning">.justify-content-around <span
+                class="my-width-024"></span>：均分對齊，兩端為間格（等寬不重疊）</span><br>
+            <span class="text-warning">.justify-content-evenly <span
+                class="my-width-030"></span>：均分對齊，兩端為間格（等寬重疊）</span>
+          </div>
+          <div class="col-md-6 bg-dark text-start border-0 border-start border-secondary ps-2">
+            <span class="text-warning">響應規則公式：</span>.justify-content - { value } 、
+            <br><span class="my-width-113"></span>.justify-content- { breakpoint } - {
+            value }<br><br>
+            <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+            <span class="text-warning">value：</span><span
+              class="my-width-041"></span>start、end、center、between、around、evenly<br>
+            <span class="text-warning">例：</span><span class="my-width-065"></span><span
+              class="text-white">.justify-content-start、justify-content-md-end</span>
+          </div>
+        </div>
+
+        <div class="bd-example">
+          <div class="d-flex justify-content-start bd-highlight mb-3 border border-secondary bg-secondary">
+            <div class="p-2 bd-highlight bg-primary border border-white">justify-content-start</div>
+            <div class="p-2 bd-highlight bg-primary border border-white">justify-content-start</div>
+          </div>
+          <div class="d-flex justify-content-end bd-highlight mb-3 border border-secondary bg-secondary">
+            <div class="p-2 bd-highlight bg-primary border border-white">justify-content-end</div>
+            <div class="p-2 bd-highlight bg-primary border border-white">Fjustify-content-end</div>
+          </div>
+          <div class="d-flex justify-content-center bd-highlight mb-3 border border-secondary bg-secondary">
+            <div class="p-2 bd-highlight bg-primary border border-white">justify-content-center</div>
+            <div class="p-2 bd-highlight bg-primary border border-white">justify-content-center</div>
+          </div>
+          <div class="d-flex justify-content-between bd-highlight mb-3 border border-secondary my-bg-color-904e6f">
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-between</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-between</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-between</div>
+          </div>
+          <div class="d-flex justify-content-around bd-highlight mb-3 border border-secondary my-bg-color-904e6f">
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-around</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-around</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-around</div>
+          </div>
+          <div class="d-flex justify-content-evenly bd-highlight border border-secondary my-bg-color-904e6f">
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-evenly</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-evenly</div>
+            <div class="p-2 bd-highlight bg-dark border border-white">justify-content-evenly</div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-5 text-warning">【align-items 屬性 ( in 父容器）】<span class="fs-6 text-white">以 X 軸為中心，平行 Y 軸，上下移動。</span>
+      </h5>
+      <p>align-items 控制子項目的 cross 縱向交叉軸，與 flex-direction 有同樣觀念但形成交錯之直角方向性。</p>
+      <div class="row">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-white">.align-items-start<span class="my-width-042"></span>：頂端對齊</span><br>
+          <span class="text-white">.align-items-end <span class="my-width-043"></span>：底部對齊</span><br>
+          <span class="text-white">.align-items-center<span class="my-width-029"></span>：中線對齊</span><br>
+          <span class="text-white">.align-items-baseline<span class="my-width-014"></span>：基準線（內容之文字）對齊</span><br>
+          <span class="text-white">.align-items-stretch<span class="my-width-025"></span>：基準線（內容之文字）對齊</span><br>
+        </div>
+        <div class="col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.align-items - { value } 、 .align-items- { breakpoint } - { value
+          }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span
+            class="my-width-041"></span>start、end、center、baseline、stretch<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.align-items-start、align-items-md-end</span>
+        </div>
+      </div>
+
+      <div class="bd-example">
+        <div class="d-flex align-items-start bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-start</div>
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-start</div>
+        </div>
+        <div class="d-flex align-items-end bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-end</div>
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-end</div>
+        </div>
+        <div class="d-flex align-items-center bd-highlight mb-3 bg-secondary" style="height: 70px">
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-center</div>
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-center</div>
+        </div>
+        <div class="d-flex align-items-baseline bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-baseline</div>
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-baseline</div>
+        </div>
+        <div class="d-flex align-items-stretch bd-highlight bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-stretch</div>
+          <div class="px-3 bd-highlight border border-white bg-primary">align-items-stretch</div>
+        </div>
+      </div>
+
+      <h5 class="mt-5 text-warning">【align-self 屬性 ( in 子項目）】</h5>
+      <p>align-slef 能擺脫 align-items 的控制之優先權，獨立對本身子項目進行（與 align-items 一致的）控制效果。</p>
+      <div class="row">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-white">.align-self-start<span class="my-width-054"></span>：頂端對齊</span><br>
+          <span class="text-white">.align-self-end<span class="my-width-060"></span>：底部對齊</span><br>
+          <span class="text-white">.align-self-center<span class="my-width-042"></span>：中線對齊</span><br>
+          <span class="text-white">.align-self-baseline<span class="my-width-028"></span>：基準線（內容之文字）對齊</span><br>
+          <span class="text-white">.align-self-stretch<span class="my-width-039"></span>：填滿 100%</span>
+        </div>
+        <div class="col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.align-self - { value } 、 .align-items- { breakpoint } - { value
+          }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span
+            class="my-width-041"></span>start、end、center、baseline、stretch<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.align-self-start、align-self-md-end</span>
+        </div>
+      </div>
+
+      <div class="bd-example">
+        <div class="d-flex bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+          <div class="align-self-start px-3 bd-highlight border border-white bg-primary">align-self-start</div>
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+        </div>
+        <div class="d-flex bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+          <div class="align-self-end px-3 bd-highlight border border-white bg-primary">align-self-end</div>
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+        </div>
+        <div class="d-flex bd-highlight mb-3 bg-secondary" style="height: 100px">
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+          <div class="align-self-center px-3 bd-highlight border border-white bg-primary">align-self-center</div>
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+        </div>
+        <div class="d-flex bd-highlight mb-3 bg-secondary" style="height: 60px">
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+          <div class="align-self-baseline px-3 bd-highlight border border-white bg-primary">align-self-baseline</div>
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+        </div>
+        <div class="d-flex bd-highlight bg-secondary my-bg-color-904e6f" style="height: 80px">
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+          <div class="align-self-stretch px-3 bd-highlight border border-white bg-primary">align-self-stretch</div>
+          <div class="px-3 bd-highlight border border-white my-bg-color-904e6f">彈性項目</div>
+        </div>
+      </div>
+
+      <h5 class="mt-5 text-warning">【flex-fill 屬性 ( in 子項目】</h5>
+      <p>原 CSS 無此 flex 屬性，是 Bootstrap 使用 flex：1 1 auto 作為套用。其目的控制子項目能均勻填滿整體主軸空間分配（寬度）。
+        <br>換個說法是，<span class="text-warning">依內容長度分配適當空間。</span>
+      </p>
+      <div class="row">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-white">.flex-fill<span class="my-width-054"></span>：子項目進行填滿間格</span>
+        </div>
+        <div class="col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.flex- { breakpoint } - fill<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.flex-md-fill、flex-lg-fill</span>
+        </div>
+      </div>
+
+      <div class="bd-example">
+        <div class="d-flex bd-highlight bg-secondary">
+          <div class="p-2 flex-fill bd-highlight border border-white my-bg-color-904e6f">flex-fill ( 依內容長度分配適當空間 )</div>
+          <div class="p-2 flex-fill bd-highlight border border-white my-bg-color-904e6f">flex-fill</div>
+          <div class="p-2 flex-fill bd-highlight border border-white my-bg-color-904e6f">flex-fill</div>
+        </div>
+      </div>
+
+      <h5 class="mt-5 text-warning">【flex-grow 與 flex-shrink 屬性 ( in 子項目） | 伸縮值】</h5>
+      <p>與 CSS 的 flexbox 觀念中的 flex-grow 與 flex-shrink 雷同主要是控制子項目的膨脹收縮。<span class="text-warning">但已被寫死分配比例只有數據 0 與
+          1。</span></p>
+      <ul>
+        <li>1 代表啟用膨脹 / 收縮，反之 0 代表強制不要膨脹收縮。</li>
+        <li class="text-warning">flex-grow-1 代表膨脹吃光所有空間並填滿。</li>
+        <li class="text-info">flex-shrink-1 代表收縮到允許文字強迫換行的最小內容寬度，舉例若上層元素為 w-100
+          狀態時，該項目的擠壓效果會明顯化。<br>（此屬性不常被使用，因子項目在不指定空間情況下就會自因內容調整寬度，少部分有需特地前者擠壓滿版並要求後者文字換行之可能性）</li>
+      </ul>
+
+      <div class="row">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-warning">.flex-grow-0 <span class="my-width-051"></span>：子項目不允許膨脹</span><br>
+          <span class="text-warning">.flex-grow-1<span class="my-width-055"></span>：子項目允許膨脹填滿最大空間</span>
+
+        </div>
+        <div class="col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.flex- { breakpoint } - { value }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span class="my-width-041"></span>grow-0、grow-1<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.flex-grow-0、flex-md-grow-1</span>
+        </div>
+      </div>
+
+      <div class="bd-example">
+        <div class="d-flex bd-highlight bg-secondary text-dark">
+          <div class="p-2 flex-grow-1 bd-highlight border border-white my-bg-color-ff9d1c">flex-grow-1 <span
+              class="my-width-025"></span>彈性項目</div>
+          <div class="p-2 bd-highlightborder border border-white my-bg-color-ff9d1c">彈性項目</div>
+          <div class="p-2 bd-highlight border border-white my-bg-color-ff9d1c">第三個彈性項目</div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span class="text-info">.flex-shrink-0 <span class="my-width-051"></span>：子項目不允許收縮換行</span><br>
+          <span class="text-info">.flex-shrink-1<span class="my-width-054"></span>：子項目允許被擠壓時文字行收縮換行</span>
+        </div>
+        <div class="col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.flex- { breakpoint } - { value }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span class="my-width-041"></span>shrink-0、shrink-1<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.flex-shrink-0、flex-md-shrink-1</span>
+        </div>
+      </div>
+      <div class="bd-example">
+        <div class="d-flex bd-highlight bg-secondary">
+          <div class="p-2 w-100 bd-highlight border border-white bg-primary">彈性項目</div>
+          <div class="p-2 flex-shrink-1 bd-highlight border border-white bg-primary">flex-shrink-1<span
+              class="my-width-015"></span>子項目允許被擠壓時文字行收縮換行</div>
+        </div>
+      </div>
+
+
+
+
+
+      <h5 class="mt-5 text-warning">【wrap 屬性 ( in 父容器)】<span class="fs-6 text-white"></span></h5>
+      <p>當子項目受擠壓至上限時，內容文字是否允許換行之方式，分為不換行與換行朝上或換行朝下。</p>
+
+      <div class="row mt-n3">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span>.flex-nowrap <span class="my-width-051"></span>：不換行</span><br>
+          <span>.flex-wrap<span class="my-width-075"></span>：換行朝下</span> <br>
+          <span>.flex-wrap-reverse<span class="my-width-014"></span>：換行朝上</span>
+
+        </div>
+        <div class="mb-n4 col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.flex- { breakpoint } - { value }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span class="my-width-041"></span>nowrap、swrap、wrap-reverse<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.flex-wrap、flex-md-wrap</span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4 border-0 bg-dark">
+            <div class="bd-example border border-white bg-secondary">
+              <div class="d-flex flex-nowrap bd-highlight my-bg-color-ff9d1c" style="width: 8rem;">
+                <div class="p-2 bd-highlight border border-dark">flex-nowrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-nowrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-nowrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-nowrap</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 border-0 bg-dark"></div>
+          <div class="col-6 border-0 bg-dark">
+            <div class="bd-example">
+              <div class="d-flex flex-wrap bd-highlight border border-white bg-secondary">
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+                <div class="p-2 bd-highlight border border-dark">flex-wrap</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <h5 class="mt-5 text-warning" id="order-first">【order 屬性 ( in 子項目）】<a class="text-danger text-decoration-none"
+          href="#order-col">點擊參考類似屬性 - 【排序 Order classes - for col use】</a></h5>
+      <p>控制該子項目在所有子項目當中的優先順序。</p>
+      <ul>
+        <li>從 0 開始優先，其次不指定者則次依 HTML 順序出現，最後從數字 1 開始小排序到大，最多數字為 5。</li>
+        <li>提供絕對至首與至尾的 .order-first 與 .order-last 效果，原理為數字 -1 與 6。</li>
+      </ul>
+
+      <div class="row mt-n3">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span>.order- { value }</span>
+        </div>
+        <div class="mb-n4 col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.order- { breakpoint } - { value }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span class="my-width-041"></span>0、1、2、3、4、5、first、last<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.order-0、order-md-1</span>
+        </div>
+      </div>
+
+      <div class="bd-example bg-secondary">
+        <div class="d-flex flex-nowrap bd-highlight">
+          <div class="order-3 p-2 bd-highlight bg-warning border border-white text-black">order-3<span
+              class="my-width-020"></span>第 1 個彈性項目</div>
+          <div class="order-2 p-2 bd-highlight bg-warning border border-white text-black">order-2<span
+              class="my-width-020"></span>第 2 個彈性項目</div>
+          <div class="order-1 p-2 bd-highlight bg-warning border border-white text-black">order-1<span
+              class="my-width-020"></span>第 3 個彈性項目</div>
+        </div>
+      </div>
+
+      <h5 class="mt-5 text-warning">【align-content 屬性 ( in 父容器）| 對齊內容】</h5>
+      <p>以水平主軸為例，在有高度的情況下控制子項目的垂直對齊方式，且必須<span class="text-warning">多行模式</span>下有效。（ 不支援於 .wrap-nowrap 模式，但可改用
+        align-items 來達到相容效果 ）。
+        <br><span class="text-white">注意！ 此特性對於單行的 Flex 項目沒有作用。</span>
+      </p>
+
+      <div class="row mt-n3">
+        <div class="col-xl-5 bg-dark border-0 text-start">
+          <span>.align-content-start<span class="my-width-037"></span>：頂端對齊</span><br>
+          <span>.align-content-end<span class="my-width-042"></span>：底部對齊</span> <br>
+          <span>.align-content-center<span class="my-width-024"></span>：中線對齊</span><br>
+          <span>.align-content-around<span class="my-width-017"></span>：均分對齊，兩側留間格</span> <br>
+          <span>.align-content-stretch<span class="my-width-020"></span>：平均的填滿空間</span>
+
+        </div>
+        <div class="mb-n4 col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+          <span class="text-warning">響應規則公式：</span>.align-content- { breakpoint } - { value }<br><br>
+          <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+          <span class="text-warning">value：</span><span class="my-width-041"></span>start、end、center、around、stretch<br>
+          <span class="text-warning">例：</span><span class="my-width-065"></span><span
+            class="text-white">.align-content-start、align-content-md-start</span>
+        </div>
+      </div>
+
+      <div class="bd-example bg-secondary">
+        <div class="d-flex align-content-start flex-wrap bd-highlight mb-3" style="height: 90px">
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+        </div>
+      </div>
+
+      <div class="bd-example bg-secondary">
+        <div class="d-flex align-content-center flex-wrap bd-highlight mb-3" style="height: 90px">
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+        </div>
+      </div>
+
+      <div class="bd-example bg-secondary">
+        <div class="d-flex align-content-end flex-wrap bd-highlight mb-3" style="height: 90px">
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+          <div class="px-2 bd-highlight border border-dark my-bg-color-ff9d1c">Flex item</div>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="mt-5 text-warning">【 CSS ： 甚麼是 Float 】<span class="fs-6 text-white">float 針對單一元素去調整它浮動的位置</span></h5>
+    <h5>使用 float 排版</h5>
+    <p>
+      使用 float 排版時，常常還會需要加入 clearfix 效果清除浮動，才不會跑版。<br>
+      <span class="text-white">HTML</span><br>
+      &lt;div class=&quot;container&quot;&gt;<br>
+      <span class="my-width-025"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imper<br>
+      <span class="my-width-025"></span>&lt;button class=&quot;float&quot;&gt;▼ 詳細內容&lt;/button&gt;<br>
+      &lt;/div&gt;<br><br>
+
+      <span class="text-white">CSS</span><br>
+      .float {<br>
+      <span class="my-width-025"></span>float: right;<br>
+      }<br>
+      .container：：after {<br>
+      <span class="my-width-025"></span>content：'' ;<br>
+      <span class="my-width-025"></span>clear：both ;<br>
+      <span class="my-width-025"></span>display：table ;<br>
+      }
+    </p>
+    <hr>
+    <h5 class="mt-5 text-warning">
+      【 CSS ： 甚麼是 Flexbox 】<span class="fs-6 text-white">Flexbox 調整該元素在父元素中主軸和交錯軸的分配</span>
+      <span class="my-width-330"></span>
+      <a class="text-info fs-3" href="https://codepen.io/peiqun/pen/WYzzYX" target="_blank">連結： Flexbox 測試工具</a>
+    </h5>
+    <p>
+      <span class="text-warning">想加入 flex 的效果，就需要將語法寫入父元素</span>，這樣父元素裡的所有子元素都可以使用 flexbox 模型，還可以針對單一個子元素進行調整，相當彈性。
+    </p>
+
+    <h5>使用 flexbox 排版</h5>
+    <p>
+      先將 flexbox 加入 display：flex 的效果，在設定 X 軸 justify-content，為平均分配內容元素，左右元素貼齊 X 軸最前端與最末端。<br>
+
+      <span class="text-white">HTML</span><br>
+      &lt;div class=&quot;flexbox&quot;&gt;<br>
+      <span class="my-width-025"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imper<br>
+      <span class="my-width-025"></span>&lt;button>▼ 詳細內容&lt;/button&gt;<br>
+      &lt;/div&gt; <br><br>
+
+      <span class="text-white">CSS</span><br>
+      .flexbox {<br>
+      <span class="my-width-025"></span>display：flex ;<br>
+      <span class="my-width-025"></span>justify-content：space-between ;<br>
+      }
+    </p>
+    <hr>
+
+
+    <h5 class="mt-5 text-warning">【 CSS ： justify-content 屬性介紹 】<span class="fs-6 text-white">justify-content
+        調整版面-內容</span><span class="my-width-300"></span><a class="text-info"
+        href="https://w3c.hexschool.com/flexbox/4a029043" target="_blank">連結： justify-content 屬性介紹</a></h5>
+    <p>主要以 Y 軸來排版<br><br>
+      justify-content：flex-start<br>
+      justify-content：flex-end<br>
+      justify-content：center<br>
+      justify-content：space-around <span class="my-width-053"></span>( 平均分配寬度和間距。 )<br>
+      justify-content：space-between <span class="my-width-042"></span>( 平均分配寬度，第一項和最後一項貼齊邊緣。 )
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： align-items 屬性介紹 】<span class="fs-6 text-white">align 對齊</span><span
+        class="my-width-300"></span><a class="text-info" href="https://w3c.hexschool.com/flexbox/87d66dc4"
+        target="_blank">連結： align-items 屬性介紹</a></h5>
+    <p>
+      align-items 和 justify-content 相反，主要以 X 軸來做排版<br><br>
+
+      align-items：flex-start<br>
+      align-items：flex-end<br>
+      align-items：center<br>
+      align-items：stretch <span class="my-width-035"></span>( 預設值，將內容元素撐開至 flexbox 大小。 )<br>
+      align-items：baseline <span class="my-width-024"></span>( 對齊內容物的基線。 )
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： flex-wrap 屬性介紹 】<span class="fs-6 text-white">flex-wrap 彈性-包裝</span><span
+        class="my-width-300"></span><a class="text-info" href="https://w3c.hexschool.com/flexbox/4ed6ec22"
+        target="_blank">連結： flex-wrap 屬性介紹</a></h5>
+    <p>在使用 flexbox 效果時我們可以發現如果子元素數量較多時，內容常會被壓縮且擠在同一行，這時我們就可以透過 flex-wrap 來換行。<br><br>
+
+      flex-wrap：nowrap; <span class="my-width-082"></span>( 預設值，不斷行。 )<br>
+      flex-wrap：wrap; <span class="my-width-103"></span>( 多行。 )<br>
+      flex-wrap：wrap-reverse; <span class="my-width-042"></span>( 多行，且 Y 軸起點與終點相反 )<br><br>
+
+      <span class="text-white">flex-direction 為 column 情況下</span><br>
+      flex-wrap：nowrap; <span class="my-width-082"></span>( 預設值，不斷行。 )<br>
+      flex-wrap：wrap; <span class="my-width-103"></span>( 多行。 )<br>
+      flex-wrap：wrap-reverse; <span class="my-width-042"></span>( 多行，且 X 軸起點與終點相反。 )
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： align-content 屬性介紹 】<span class="fs-6 text-white">align-content
+        對齊-內容</span><span class="my-width-300"></span><a class="text-info"
+        href="https://w3c.hexschool.com/flexbox/d0e569ef" target="_blank">連結： align-content 屬性介紹</a></h5>
+    <p>
+      align-content：flex-start <span class="my-width-041"></span>( 每行貼齊 X 軸最前端。 )<br>
+      align-content：flex-end <span class="my-width-046"></span>( 每行貼齊 X 軸最末端。 )<br>
+      align-content：center <span class="my-width-061"></span>( 每行對齊 X 軸中間。 )<br>
+      align-content：space-between <span class="my-width-042"></span>( 第一行與最後一行分別對齊 X 軸最前端與最末端。 )<br>
+      align-content：space-around <span class="my-width-052"></span>( 每行平均分配每行間距。 )<br>
+      align-content：tretch <span class="my-width-064"></span>( 預設值，每行內容元素全部撐開至 flexbox 大小。 )
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： flex-direction 屬性介紹 】<span class="fs-6 text-white">flex-direction
+        彈性-方向</span><span class="my-width-300"></span><a class="text-info"
+        href="https://w3c.hexschool.com/flexbox/c1b62b9b" target="_blank">連結： flex-direction 屬性介紹</a></h5>
+    <p>
+      當我們將父元素加入 display：flex; 屬性時，內容物會依照 Y 軸排列成一行，如果我們想將內容物呈現直向排列，可以透過 flex-direction 來設定。<br><br>
+
+      flex-direction：row; <span class="my-width-125"></span>( 預設值，內容物依照 X 軸擺設，因此內容物呈現橫向排列。 )<br>
+      flex-direction：row-reverse; <span class="my-width-064"></span>( 與 row 相同，且 X 軸起點與終點相反。 )<br>
+      flex-direction：column; <span class="my-width-097"></span>( Y 軸位置與 X 軸位置調換，因此內容物呈現直向排列。 )<br>
+      flex-direction：column-reverse; <span class="my-width-036"></span>( 與 column 相同，且 X 軸起點與終點相反。 )<br><br>
+      特別的是，當我們將父元素設定為直向排列時， X 軸和 Y 軸位置會調換，所以 justify-content 和 align-items 等屬性的對齊方式也會跟者變動。
+      <br>以下是加上 justify-content：center; 後所呈現不同的效果。<br>
+      <img class="img-fluid mt-4" src="img/p12.png">
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： order 屬性介紹 】<span class="my-width-300"></span><a class="text-info"
+        href="https://w3c.hexschool.com/flexbox/4007bc24" target="_blank">連結： order 屬性介紹</a></h5>
+
+
+    <h5 class="mt-5 text-warning">【 CSS ： flex-basis、flex-grow、flex-shrink 屬性介紹 】<span
+        class="fs-6 text-white">flex-basis 彈性基礎、flex-grow 靈活成長、flex-shrink 伸縮</span></h5>
+    <div class="w-100 text-end fs-5"><span class="my-width-300"></span><a class="text-info"
+        href="https://w3c.hexschool.com/flexbox/9883b0fb" target="_blank">連結： flex-basis、flex-grow、flex-shrink 屬性介紹</a>
+    </div>
+    <p>
+      flex 也是將 CSS 設定於子元素上，個別調整子元素長度「伸展」、「壓縮」的比例以及基本大小。 flex 是由三個屬性組成的，分別是「flex-grow」、「flex-shrink」和「flex-basis」，如果 flex
+      只填了一個數值，那麼預設是調整「flex-grow」效果。<br><br>
+    <ul>
+      <li>flex-grow 子元素「伸展」比例分配：數字，無單位，預設值為 0，不可為負值
+        flex-grow 尚未進行設定時，不會將剩餘空間分配給子元素做長度「伸展」，
+        <br>設定為 1 長度會進行彈性變化。分配的比例會依照設定的數值進行配置
+      </li>
+      <li>flex-shrink 子元素「壓縮」比例分配：數字，無單位，預設值為 1，不可為負值</li>
+      <li>flex-shrink 尚未進行設定時，會按照數字「壓縮」比例分配。如果不想要被壓縮的話，可以設定數值為 0。</li>
+      <li>flex-basis 子元素基本大小：預設值為 0</li>
+    </ul>
+
+    </p>
+
+    <h5 class="mt-5 text-warning">【 CSS ： align-self 屬性介紹 】<span class="fs-6 text-white">align-self 自我調整</span><span
+        class="my-width-300"></span><a class="text-info" href="https://w3c.hexschool.com/flexbox/c3847835"
+        target="_blank">連結： align-self 屬性介紹</a></h5>
+    <p>
+      align-self 可以個別調整子元素在 Y 軸的位置，屬性與 align-item 相同。
+      <br>假如我們已經在父元素上設定 align-item，但要其中一個內容物的位置需要調整成其他對齊方式，這時我們就可以針對該元素設定 align-self 來覆寫原本 align-item 的屬性。
+      align-item：center <span class="my-width-088"></span>( 使用 flex-start 對齊 Y 軸最前端。 )<br>
+      align-item：center <span class="my-width-044"></span>( 使用 flex-end 對齊 Y 軸最終端。 )<br>
+      align-item：flex-end <span class="my-width-030"></span>( 使用 center 對齊 Y 軸中央。 )<br>
+      align-item：center <span class="my-width-045"></span>( 使用 stretch 將內容元素撐開至 flexbox 大小。 )
+    </p>
+
+
+    <hr>
+    <h5 class="mt-5 text-warning">【 Flex 權重 】<span class="my-width-300"></span><a class="text-info"
+        href="https://codepen.io/peiqun/pen/WYzzYX" target="_blank">連結： Flexbox Playground</a></h5>
+    <p>
+      flex-direction<span class="my-width-050"></span><span class="text-white">方向</span><span
+        class="my-width-010"></span><span class="text-warning">( X / Y 軸。權重最高 )</span> <br>
+      justify-content<span class="my-width-040"></span><span class="text-white">調整-內容</span> <br>
+      align-items <span class="my-width-062"></span><span class="text-white">對齊-所有項目</span> ( 對齊 Y 軸 ) <br>
+      flex-wrap <span class="my-width-077"></span><span class="text-white">彈性-包裝</span> <br>
+      align-content<span class="my-width-049"></span><span class="text-white">對齊-內容</span> <br>
+      align-self<span class="my-width-081"></span><span class="text-white">對齊-自我</span>
+    </p>
+
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【 卡片 Cards 】<span class="fs-6 text-white">一個有彈性、可擴展的內容容器，並具有多種變化及選擇。</span><span class="my-width-150"></span><a class="text-warning" href="https://bootstrap5.hexschool.com/docs/5.0/components/card/" target="_blank">連結 - 卡片</a></h5>
+      <p>
+        卡片是一個有彈性且可擴展的內容容器。它包含了頁首和頁尾的選項、多樣化的內容、上下文的背景顏色以及強大的展示選項。如果你很熟悉 Bootstrap 3，那卡片將取代舊有的 panel, well 和
+        thumbnail。與那些元件類似的功能已經都整合到卡片內了
+      </p>
+      <ul class="text-warning">
+        <li>使用 flexbox 構建。</li>
+        <li>預設中它並沒有 margin，所以可以依需求加入 <a class="text-white"
+            href="https://bootstrap5.hexschool.com/docs/5.0/utilities/spacing/" target="_blank">spacing 通用類別</a>。</li>
+      </ul>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-4 p-3 bg-dark border-0">
+
+            <div class="card">
+              <img src="img/marklin.webp" class="card-img-top" alt="安德烈亞斯河谷的鐵路運營">
+              <div class="card-body">
+                <h5 class="card-title text-black">安德烈亞斯河谷的鐵路運營</h5>
+                <p class="card-text text-start">在本視頻中，我們向您展示了 Andreastal 佈局中的 3 種不同火車組。</p>
+                <div class="text-end">
+                  <a href="#" class="card-link small">卡片鏈接</a>
+                  <a href="#" class="card-link small">另一個鏈接</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-8 p-3 bg-dark border-0">
+            <p class="text-start">
+              &lt;div class=&quot;card&quot;&gt;<br>
+              <span class="my-width-025"></span>&lt;img src=&quot;<span
+                class="text-warning">img/marklin.webp</span>&quot; class=&quot;card-img-top&quot;
+              alt=&quot;安德烈亞斯河谷鐵路運營&quot;&gt;<br>
+              <span class="my-width-025"></span>&lt;div class=&quot;card-body&quot;&gt;<br>
+              <span class="my-width-050"></span>&lt;h5 class=&quot;card-title text-black&quot;&gt;<span
+                class="text-warning">安德烈亞斯河谷的鐵路運營</span>&lt;/h5&gt;<br>
+              <span class="my-width-050"></span>&lt;p class=&quot;card-text text-start&quot;&gt;
+              <br><span class="my-width-075"></span><span class="text-warning">在本視頻中，我們向您展示了 Andreastal 佈局中的 3
+                種不同火車組。</span>
+              <br><span class="my-width-050"></span>&lt;/p&gt;<br>
+              <span class="my-width-050"></span>&lt;div class=&quot;text-end&quot;&gt;<br>
+              <span class="my-width-100"></span>&lt;a href=&quot;#&quot; class=&quot;card-link small&quot;&gt;<span
+                class="text-warning">卡片鏈接</span>&lt;/a&gt;<br>
+              <span class="my-width-100"></span>&lt;a href=&quot;#&quot; class=&quot;card-link small&quot;&gt;<span
+                class="text-warning">另一個鏈接</span>&lt;/a&gt;<br>
+              <span class="my-width-050"></span>&lt;/div&gt;<br>
+              <span class="my-width-025"></span>&lt;/div&gt;<br>
+              &lt;/div&gt;
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="text-warning">【水平卡片】</h5>
+      <p>
+        結合使用網格以及通用類別，可以讓卡片以行動友善且響應式的方法呈現水平狀態。<br>
+        在下面的範例中，我們使用 .g-0 移除網格的 gutters， 並使用 .col-md-* 類別讓卡片在 md 斷點之後呈現水平。<br>
+        根據卡片內容，將可能會需要一些額外的調整。
+      </p>
+      <div class="card bg-dark border border-secondary">
+
+        <div class="row g-0">
+          <div class="col-md-4 bg-dark border-0">
+            <img src="img/marklin.webp" class="card-img-top" alt="安德烈亞斯河谷的鐵路運營">
+          </div>
+          <div class="col-md-8 bg-dark border-0">
+            <div class="card-body">
+              <h5 class="card-title text-start">安德烈亞斯河谷的鐵路運營</h5>
+              <p class="card-text text-start">在本視頻中，我們向您展示了 Andreastal 佈局中的 3 種不同火車組。</p>
+              <p class="card-text text-end">Last updated 3 mins ago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-0">
+          <div class="col-md-4 bg-dark border-0">
+            <img src="img/marklin.webp" class="card-img-top" alt="安德烈亞斯河谷的鐵路運營">
+          </div>
+          <div class="col-md-8 bg-dark border-0">
+            <div class="card-body">
+              <h5 class="card-title text-start">安德烈亞斯河谷的鐵路運營</h5>
+              <p class="card-text text-start">在本視頻中，我們向您展示了 Andreastal 佈局中的 3 種不同火車組。</p>
+              <p class="card-text text-end">Last updated 3 mins ago</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-4">
+        &lt; div class=&quot;card bg-dark border border-secondary&quot;&gt;<br>
+        <span class="my-width-025"></span>&lt; div class=&quot;row g-0&quot;&gt;<br>
+        <span class="my-width-050"></span>&lt; div class=&quot;col-md-4 bg-dark&quot;&gt;<br>
+        <span class="my-width-075"></span>&lt; img src=&quot;<span class="text-warning">img/marklin.webp</span>&quot; class=&quot;card-img-top&quot; alt=&quot;安德烈亞斯河谷的鐵路運營&quot;&gt;
+        <br><span class="my-width-050"></span>&lt;/div&gt;<br>
+        <span class="my-width-050"></span>&lt; div class=&quot;col-md-8 bg-dark&quot;&gt;<br>
+        <span class="my-width-075"></span>&lt; div class=&quot;card-body&quot;&gt;<br>
+        <span class="my-width-100"></span>&lt; h5 class=&quot;card-title text-start&quot;&gt;<span class="text-warning">安德烈亞斯河谷的鐵路運營</span>&lt;
+        /h5&gt;<br>
+        <span class="my-width-100"></span>&lt; p class=&quot;card-text text-start&quot;&gt;<span class="text-warning">在本視頻中，我們向您展示了 Andreastal 佈局中的
+          3 種不同火車組。</span>&lt; /p&gt;<br>
+        <span class="my-width-100"></span>&lt; p class=&quot;card-text text-end&quot;&gt;<span class="text-warning">Last updated 3 mins ago</span>&lt;
+        /p&gt;<br>
+        <span class="my-width-075"></span>&lt;/div&gt;<br>
+        <span class="my-width-050"></span>&lt;/div&gt;<br>
+        <span class="my-width-025"></span>&lt;/div&gt; <br>
+        &lt;/div&gt;
+      </p>
+
+    </div>
+
+
+    <h5 class="mt-5 text-warning">【重置 reboot】</h5>
+    <P>大多網頁設計皆會將簡陋的 HTML 預設效果進行 reboot 重置，而 Bootstrap 不例外的也根據 Normalize 基礎進行一些規範，官網說明詳細這裡僅大略提供幾個重點說明：</P>
+    <ul>
+      <li>對於空間單位一律採用 rem 為主，使跨瀏覽器的呈現更得體</li>
+      <li>每個元素（包含偽元素）都改用 box-sizing 為 border-box，使 box 空間計算上不易影響</li>
+      <li>body 設定了全域的 font-family, font-weight, line-height 及 color，使繼承權初始運作下讓整體網頁不會不一致</li>
+      <li>預設 body 的 background 為 #fff</li>
+      <li>提供大量原生字型使用（雖提供 Noto Sans 但非 TC 版，中文顯示於粗體上略無飽滿）</li>
+      <li>Header 標籤類型都移除了 margin:top 設定改為 margin-bottom: .5rem 或 margin-bottom: 1rem （段落）</li>
+      <li>ui ( ol ), li 標籤調整了 margin 與 padding 的呈現效果， dl &gt; dt&gt; dd 同樣處理且額外調整粗體效果</li>
+      <li>行內代碼 code 標籤增加顏色效果，而多行代碼 pre &gt; code 則字型效果進行調整</li>
+      <li>var 標籤提供字型效果調整</li>
+      <li>kbd 標籤有明顯的黑底圓框效果</li>
+      <li>samp 標籤提供程式輸出的效果調整</li>
+      <li>table 標籤針對 border、padding 調整，同時搭配 caption 標籤能有效對齊一致，另有 table 單元公式項目可選用</li>
+      <li>form 與相關標籤的基本呈現調整更加簡潔，另有 form 單元公式項目可選用</li>
+      <li>根據 HTML5 語意整合，任一元素添加 <code>[role = button]</code> 屬性會自帶 CSS 鼠標屬性 pointer</li>
+      <li>address 標籤調整 font-style 效果</li>
+      <li>blockquote 標籤重新定義 margin 使與其他元素有一致性切齊</li>
+      <li>addr 標籤視覺明顯化</li>
+      <li>detail &gt; summary 標籤調整滑鼠屬性 poiner 作為互動提示</li>
+      <li>根據 HTML5 語意整合，任一元素添加 <code>[hidden]</code> 屬性會自帶 display：none&nbsp;&nbsp;!important&nbsp;&nbsp;效果</li>
+    </ul>
+
+
+    <h5 class="mt-5 text-warning">【文字排版 Typography】</h5>
+    <table class="table table-bordered border-secondary text-white">
+      <thead>
+        <tr class="bg-danger text-white text-center">
+          <th>HTML 標籤</th>
+          <th>class 模擬屬性</th>
+          <th>外觀說明</th>
+          <th>Bootstrap 重新定義或參數說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>h1 ~ h6</td>
+          <td>.h1 ~ .h6</td>
+          <td>標題文字</td>
+          <td>h1 的 font-size 為 2.5rem，h2 為 2rem，之後每降一級減去 0.25rem</td>
+        </tr>
+        <tr>
+          <td>small</td>
+          <td>.small</td>
+          <td>次文字</td>
+          <td>為原尺寸後為再縮小 80%</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.text-muted</td>
+          <td>減弱文字</td>
+          <td>能使文字產生灰化文字，類似提示字應用</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.display-*</td>
+          <td>超大文字</td>
+          <td>做特大的廣告或是主題文字尺寸， <code>*</code> 1~6 數字代表小至大（同 heading 邏輯）</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.lead</td>
+          <td>前導文字</td>
+          <td>作為 p 段落的前導，效果為 <code>font-size: 1.25rem</code> 與 <code>font-weight: 300</code>
+            而已</td>
+        </tr>
+        <tr>
+          <td>mark</td>
+          <td>.mark</td>
+          <td>標記文字</td>
+          <td>行內產生黃底標記的效果</td>
+        </tr>
+        <tr>
+          <td>del, s</td>
+          <td></td>
+          <td>刪除文字</td>
+          <td>行內產生一條線位於文字中央水平，有刪除線的效果</td>
+        </tr>
+        <tr>
+          <td>ins, u</td>
+          <td>.text-decoration-underline</td>
+          <td>底線文字</td>
+          <td>行內同上但是放於底部，有底線效果</td>
+        </tr>
+        <tr>
+          <td>strong, b</td>
+          <td>.text-decoration-line-through</td>
+          <td>粗體文字</td>
+          <td>行內文字加粗，綁訂了 <code>font-weight: bolder</code> 效果</td>
+        </tr>
+        <tr>
+          <td>em, cite</td>
+          <td></td>
+          <td>斜體文字</td>
+          <td>文字斜體化</td>
+        </tr>
+        <tr>
+          <td>abbr</td>
+          <td></td>
+          <td>縮寫文字</td>
+          <td>英文縮寫提示底點效果（搭配屬性 title）並提供 hover 鼠標問號，可增加 <code>.initialism</code> 縮小 0.875rem
+          </td>
+        </tr>
+        <tr>
+          <td>blockquote.blockquote</td>
+          <td></td>
+          <td>引用文字</td>
+          <td>對 blockquote 追加<code>.blockquote</code> 能使效果更好些</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.blockquote-footer</td>
+          <td>引用來源文字</td>
+          <td>產生前面有<code>—</code>符號之淺灰小字，同時此處你應該使用 footer 標籤並上層為 blockquote 標籤</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.text-center &amp; .text-end</td>
+          <td>文字對齊</td>
+          <td>使文字居中或靠右，這些會能在通用類別更詳細解說到</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.list-unstyled</td>
+          <td>清除列表樣式</td>
+          <td>通常寫在 ul 或 ol 這類標籤內，使原外觀效果完全清除</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.list-inline &gt; list-inline-item</td>
+          <td>列表水平化</td>
+          <td>將列表 inline 水平化並適時 margin 分開，常用於水平選單</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>.text-truncate</td>
+          <td>省略文字</td>
+          <td>當超出空間 overflow 時會轉成 … 做省略之效果</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5 class="mt-5 text-warning">【圖片 images】</h5>
+    <p>圖片沒有太多重要的外觀公式，主要還是依賴基本 class 公式並保持 box 觀念，像是你應該知道 .float - { start | end } & .text - { start| end } & .m { s | e
+      } - auto 這三者的原理與應用場合。</p>
+    <table class="table table-bordered border-secondary text-white">
+      <thead>
+        <tr class="bg-warning text-dark text-center">
+          <th>class 屬性</th>
+          <th>效果說明</th>
+          <th>Bootstrap 重新定義或參數說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>.img-fluid</td>
+          <td>響應式圖片</td>
+          <td>賦予 <code>max-width:100%</code> &amp; <code>hegiht:auto</code> 使圖片跟隨父容器 box
+            填滿寬度並自動等比例高度</td>
+        </tr>
+        <tr>
+          <td>.img-thumbnail</td>
+          <td>縮圖框</td>
+          <td>對圖片產生 1px 的白框</td>
+        </tr>
+        <tr>
+          <td>.rounded</td>
+          <td>圓角化</td>
+          <td>對圖片圓角化 <code>border-radius:0.25rem</code></td>
+        </tr>
+        <tr>
+          <td>.float- { start | end } <br> .text- { start | end } <br> .m { s | e } -auto</td>
+          <td>靠邊對齊</td>
+          <td>基本方法很多都能適用，使能對向靠齊左右</td>
+        </tr>
+        <tr>
+          <td>.text- { center } <br> .mx-auto</td>
+          <td>水平置中</td>
+          <td>同上理由</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5 class="mt-5 text-warning">【表格 table】</h5>
+    <p>Bootstrap 已先對 table 重置十分乾淨，大多數都會再套加一些給 table 專用的 class 公式。注意以下要點：</p>
+    <ul>
+      <li>需要美麗的表格外觀，<span class="text-warning">一定需要對 &lt;table&gt;&lt;/table&gt; 處添加 .table ，否則只有得到簡約表格。</span></li>
+      <li>table 必須要完整結構，像是有<code>&lt;thead&gt;&lt;/thead&gt;</code>,
+        <code>&lt;tbody&gt;&lt;/tbody&gt;</code>,<code>&lt;th&gt;&lt;/th&gt;</code>這些，不重視語意的可以不用宣告<code>scope=&#123;row\|col&#125;</code>標籤屬性
+      </li>
+      <li>class 公式下的位置要對，思考對那裡變化就該用哪裡的 class 且效果可以累加</li>
+      <li>table 的垂直對齊方式根據 vertical-align 操作，<span class="text-white">以下三種 class 公式能適用於<br>
+          table、tr、th、td：</span><span class="text-warning">align-middle : 置中、<br>
+          <span class="text-white">align-top：</span>靠上、<br>
+          <span class="text-white">align-bottom：</span>靠下</span>
+      </li>
+    </ul>
+    <table class="table table-bordered border-secondary text-white">
+      <thead>
+        <tr class="bg-danger text-white text-center">
+          <th>class 屬性</th>
+          <th>位置處</th>
+          <th>效果說明</th>
+          <th>Bootstrap 重新定義或參數說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>.table</td>
+          <td>table</td>
+          <td>美化表格</td>
+          <td>產生具有線格的表格，否則你只會得到潔白如玉的表格外觀</td>
+        </tr>
+        <tr>
+          <td>.table- { color }</td>
+          <td>table、tr、th、td</td>
+          <td>表格主色</td>
+          <td>提供色底黑字之表格效果（ dark 為白字配）。<br>color：primary、secondary、success、danger、warning,
+            info、light、dark</td>
+        </tr>
+        <tr>
+          <td>.table-striped</td>
+          <td>table</td>
+          <td>灰白間格</td>
+          <td>自動產生相間的條紋效果</td>
+        </tr>
+        <tr>
+          <td>.table-hover</td>
+          <td>table</td>
+          <td>滑過效果</td>
+          <td>產生滑鼠移過時該排 tr 有灰底效果</td>
+        </tr>
+        <tr>
+          <td>.table-active</td>
+          <td>tr、th、td</td>
+          <td>局部強調</td>
+          <td>針對指定行或欄位進行著色。</td>
+        </tr>
+        <tr>
+          <td>.table-bordered</td>
+          <td>table</td>
+          <td>線條化</td>
+          <td>四邊框線為 <code>border：1px solid #dee2e6</code>，可搭配
+            <code>border-&#123;color&#125;</code> 調色
+          </td>
+        </tr>
+        <tr>
+          <td>.table-borderless</td>
+          <td>table</td>
+          <td>清除線條</td>
+          <td>四邊框線為無</td>
+        </tr>
+        <tr>
+          <td>.table-sm</td>
+          <td>table</td>
+          <td>小表格化</td>
+          <td>欄位間隙縮短形成小表格</td>
+        </tr>
+        <tr>
+          <td>.thead- { dark | light }</td>
+          <td>thead</td>
+          <td>暗化標題</td>
+          <td>提供兩種暗亮化標題之顏色效果</td>
+        </tr>
+        <tr>
+          <td>.caption-top</td>
+          <td>table</td>
+          <td>標題位置</td>
+          <td>將 caption 原下方位置改為表格之前</td>
+        </tr>
+        <tr>
+          <td>.bg- { color }</td>
+          <td>table、tr、th、td</td>
+          <td>背景色化</td>
+          <td>直接使用 background 公式提供色底（黑字）之表格效果，建議 table.table-dark 使文字顏色為白。<br>color：primary、success、danger、warning、info
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h5 class="mt-5 text-warning">【 CSS ： 簡單讓底色奇數偶數相間 - TABLE 】<span class="fs-6 text-white"></span></h5>
+    <p>
+      <span class="text-white">odd：奇數 <span class="my-width-025"></span>even：偶數</span><br>
+      tr：nth-child(even) { background: #904e6f; color:#0000ff; } </span><br>
+      tr：nth-child(even) { background: #e5e5e5; color:#000000; } <span class="my-width-025"></span><span
+        class="text-white">( Bootstrap 需多加一行 )</span><br>
+      tr：nth-child(odd) { background: #6c757d; color:#ffffff; }
+    </p>
+
+    <h5 class="text-warning">【 CSS ： 簡單讓底色奇數偶數相間 - 以 X 倍相間 】<span class="fs-6 text-white"></span></h5>
+    <p>
+      <span class="text-white">針對表格的欄</span><br>
+      col：first-child { background：#CCC; }<br>
+      col：nth-child (4n+5) { background：#AAA; }
+    </p>
+    <p>
+      <span class="text-white">針對項目標籤</span><br>
+      li：nth-child (5n+4) { color：red; }
+    </p>
+
+
+
+    <h5 class="mt-5 text-warning">【響應式表格 ( in table 標籤）】</h5>
+    <p>預設的表格會自動收縮到最低內容寬，可以使用響應式公式指定這些表格何時跳脫收縮而鎖定寬度產生水平滾軸使人滾動。</p>
+    <div class="row mt-n3">
+      <div class="col-xl-5 bg-dark border-0 text-start">
+        <span>不允許收縮，擠壓時直接啟用水平滾軸：table-responsive</span>
+      </div>
+      <div class="mb-n4 col-xl-7 bg-dark text-start border-0 border-start border-secondary ps-2">
+        <span class="text-warning">響應式表格，何種狀態下就開始不允許收縮：</span>.table-responsive- { breakpoint }<br><br>
+        <span class="text-warning">breakpoint：</span>sm、 md、lg、xl、xxl<br>
+      </div>
+    </div>
+
+    <h5 class="mt-5 text-warning">【圖片區塊 figure】</h5>
+    <p>
+      figure 屬於 HTML5 的新型態標籤，拿來作為圖片並結合描述文字的獨立區塊。Bootstrap 對於這種圖片說明標籤用途有特別進行定義。
+      <br>figure 的定義為：
+    </p>
+    <p class="text-white mb-4">
+      <span class="text-warning">&lt;figure&gt;</span><br>
+      <span class="my-width-025"></span>&lt;img src=&quot;...&quot; alt=&quot;text&quot;/&gt;<br>
+      <span class="my-width-025"></span>&lt;figcaption&gt;<span class="text-warning"> figcaption 標籤做說明文字
+      </span>&lt;/figcaption&gt;<br>
+      <span class="text-warning">&lt;/figure&gt;</span>
+    </p>
+    <span>而 Bootstrap 的定義用法為：</span>
+    <ul>
+      <li>對 figure 主標籤添加 .figure，變為 inline-block 並 margin-bottom 有 1rem 效果。</li>
+      <li>圖片標籤添加 .figure-img，使下推 margin 有 0.5rem 效果。可適時添加 .img-fluid 自適應或 .rounded 圓角化之類的累加效果。</li>
+      <li>說明標籤添加 .figure-caption，字色灰 #6c757d 且縮小 0.875em，適時添加 .text - { start | end } 可將文字靠齊呈現。</li>
+    </ul>
+    <p class="text-white">
+      <span class="text-info">&ltfigure class=&quot;figure&quot;&gt;</span><br>
+      <span class="my-width-025"></span>&ltimg src=&quot;...&quot;<span class="my-width-020"></span><span
+        class="text-warning">class = &quot; figure-img<span class="my-width-015"></span>img-fluid<span
+          class="my-width-015"></span>rounded &quot;</span><span
+        class="my-width-020"></span>alt=&quot;text&quot;&gt;<br>
+      <span class="my-width-025"></span><span class="text-warning">&ltfigcaption class = &quot; figure-caption<span
+          class="my-width-015"></span>text-right &quot;&gt;</span><span class="my-width-020"></span>test<span
+        class="my-width-020"></span><span class="text-warning">&lt/figcaption&gt;</span><br>
+      <span class="text-info">&lt/figure&gt;</span>
+    </p>
+
+
+
+
+
+
+
+
+  </div> <!-- 外圍大包 END -->
+
+</body>
+
+</html>
