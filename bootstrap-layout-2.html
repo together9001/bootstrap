@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>速查表 1 - Bootstrap 響應式布局</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://together9001.github.io/bootstrap/mycss.css"> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-dark text-white">
+  <h1 class="text-center text-warning">速查表 2 - Bootstrap 通用類別</h1>
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【背景色 Background】</h5>
+    <div class="row mt-4 text-center text-white justify-content-center">
+      <div class="p-2 col-1 sm-2 mx-2 bg-primary rounded-2">bg-primary</div>
+      <div class="p-2 col-2 sm-2 mx-2 bg-secondary rounded-2">bg-secondary</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-success rounded-2">bg-success</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-danger rounded-2">bg-danger</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-warning rounded-2">bg-warning</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-info rounded-2">bg-info</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-light text-dark rounded-2">bg-light</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-dark rounded-2 border border-secondary">bg-dark</div>
+      <div class="p-2 col-1 sm-2 mx-2 bg-white text-dark rounded-2">bg-white</div>
+    </div>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【邊框 Borders】<span class="fs-6 text-white"> ( 必要時前面加 border，例如：border border-white )</span>
+    </h5>
+    <ul>
+      <li>border 設定物件的邊框線，可以有「占據空間」的特性，可以做圓角。</li>
+      <li class="text-warning">outline 設定物件的外框線，沒有佔據空間，永遠為矩形 ( 物件的矩形空間 )。一般是在表單輸入框被 focus 時，在外面那一圈變色的框線，呈現該物件取得焦點了。</li>
+      <li>border 與 outline 是兩個不同特性的存在，所以縱使你為一個物件設定了 border ，也還是能夠為該物件設定一個
+        outline，只是......沒啥必要這要做，會這樣做的狀況，還是表單輸入欄位的取得焦點狀態有可能這麼做，其它狀況就看個別的專案或設計需求了。</li>
+    </ul>
+    <div class="row mt-4 text-center justify-content-center">
+      <span class="col-1 p-2 mx-2 border border-primary rounded-3">border-primary</span>
+      <span class="col-1 p-2 mx-2 border border-secondary rounded-3">border-secondary</span>
+      <span class="col-1 p-2 mx-2 border border-success rounded-3">border-success</span>
+      <span class="col-1 p-2 mx-2 border border-danger rounded-3">border-danger</span>
+      <span class="col-1 p-2 mx-2 border border-warning rounded-3">border-warning</span>
+      <span class="col-1 p-2 mx-2 border border-info rounded-3">border-info</span>
+      <span class="col-1 p-2 mx-2 border border-light rounded-3">border-light</span>
+      <span class="col-1 p-2 mx-2 border border-dark bg-dark rounded-3">border-dark</span>
+      <span class="col-1 p-2 mx-2 border border-white rounded-3">border-white</span>
+    </div>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto">
+    <h5 class="text-warning">【陰影 Shadow】</h5>
+    <div class="row mt-3 bg-white text-center text-black p-4 rounded-4 justify-content-center">
+      <div class="col-2 shadow-none p-2 mx-4 bg-light rounded">No shadow</div>
+      <div class="col-2 shadow-sm p-2 mx-4 bg-body rounded">Small shadow</div>
+      <div class="col-2 shadow p-2 mx-4 bg-body rounded">Regular shadow</div>
+      <div class="col-2 shadow-lg p-2 mx-4 bg-body rounded">Larger shadow</div>
+    </div>
+  </div>
+
+  <div class="row col-sm-12 col-md-9 mt-4 p-3 border border-secondary rounded-4 mx-auto">
+    <div class="container text-center">
+      <h5 class="text-warning text-start">【文字顏色】</h5>
+      <span class="p-2 text-primary">text-primary</span>
+      <span class="p-2 text-secondary">text-secondary</span>
+      <span class="p-2 text-success">text-success</span>
+      <span class="p-2 text-danger">text-danger</span>
+      <span class="p-2 text-warning">text-warning</span>
+      <span class="p-2 text-info">text-info</span>
+      <span class="p-2 text-light bg-dark">text-light</span>
+      <span class="p-2 text-white bg-dark">text-white</span>
+      <span class="p-2 text-white-50 bg-dark">text-white-50</span>
+      <br><br>
+      <span class="p-2 mx-2 text-body bg-white rounded-2">text-body</span>
+      <span class="p-2 mx-2 text-muted bg-white rounded-2">text-muted</span>
+      <span class="p-2 mx-2 text-dark bg-white rounded-2">text-dark</span>
+      <span class="p-2 mx-2 text-black bg-white rounded-2">text-black</span>
+      <span class="p-2 mx-2 text-black-50 bg-white rounded-2">text-black-50</span>
+    </div>
+
+    <div class="container">
+      <h5 class="text-warning mt-4">【文字對齊】</h5>
+      <p>
+        .text- { value }<span class="my-width-214"></span>【text-align】 value：start、end、center<br>
+        .text- { breakpoint } - { value }<span class="my-width-100"></span>【響應式 text-align】breakpoint：sm、md、lg、xl、xxl
+      </p>
+
+      <h5 class="text-warning mt-4">【文字垂直對齊】<span class="fs-6 text-white">(只對字行有效，指 inline（非 block )，如
+          inline、inline-block、inline-table、table > td 等標籤類型。在 table 的儲存格之文字十分顯卓。)</span></h5>
+      <p>
+        .align- { value }<span class="my-width-100"></span>value：baseline、top、middle、bottom、text-top、text-bottom
+      </p>
+
+
+      <h5 class="text-warning mt-4">【文字尺寸】</h5>
+      <p>
+        .fs- { number }<span class="my-width-100"></span>【font-size：2.5rem ~ 1rem 】number：1、2、3、4、5、6
+      </p>
+
+      <h5 class="text-warning mt-4">【文字粗斜體】</h5>
+      <p>
+        .fs- { value }<span class="my-width-106"></span>【粗體】value：bold、bolder、normal、light、lighter<br>
+        .fst- { value }<span class="my-width-100"></span>【斜體】value：italic、normal
+      </p>
+
+      <h5 class="text-warning mt-4">【文字大小寫】</h5>
+      <p>
+        .text-lowercase<span class="my-width-106"></span>【英文全轉小寫】<br>
+        .text-uppercase<span class="my-width-103"></span>【英文全轉大寫】<br>
+        .text-capitalize<span class="my-width-110"></span>【僅判讀英文各單字第一字母轉大寫】
+      </p>
+
+      <h5 class="text-warning">【文字截斷 Text truncation】<span class="fs-6 text-white"> (當有限的寬度下發生溢位現象時，可賦予 .text-truncate
+          ，將提供以下屬性使其產生 … 之替代，注意唯獨對非 block 模式無效。)</span></h5>
+      <table>
+        <tbody>
+          <th>
+          <td class="w-25">
+            <span class="my-width-025"></span>.text-truncate {<br>
+            <span class="my-width-050"></span>overflow: hidden;<br>
+            <span class="my-width-050"></span>text-overflow: ellipsis;<br>
+            <span class="my-width-050"></span>white-space: nowrap;<br>
+            <span class="my-width-025"></span>}
+            </p>
+          </td>
+          </th>
+          <th>
+          <td class="p-3">
+            <span class="my-width-050"></span><img src="img/p5.png">
+
+          </td>
+          </th>
+        </tbody>
+      </table>
+
+      <h5 class="text-warning mt-4">【底線、刪除線、無裝飾線】</h5>
+      <p>
+        .text-decoration- { value }<span class="my-width-110"></span>value：underline、line-through、none
+      </p>
+
+      <h5 class="text-warning mt-4">【連結色 Colored links】<span class="fs-6 text-white"> (舉凡超連結 a 元素皆可指定顏色並帶 hover
+          差異色。)</span></h5>
+      <p>
+        .link- { color }<span class="my-width-110"></span>color：primary、secondary、success、danger、warning、info、light、dark
+      </p>
+    </div>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【行高】</h5>
+    <p>
+      .lh-1<span class="my-width-106"></span>【 line-height：1 】<br>
+      .lh-sm<span class="my-width-094"></span>【 line-height：1.25 】<br>
+      .lh-base<span class="my-width-081"></span>【 line-height：1.5 】<br>
+      .lh-lg<span class="my-width-102"></span>【 line-height：2 】
+    </p>
+  </div>
+
+  <div class="container mt-2 p-4  mx-auto border-bottom">
+    <h5 class="text-warning">【間隔 Spacing】<span class="fs-6 text-white">Margin and padding</span></h5>
+    <ul>
+      <img class="img-fluid m-3 d-flex mx-auto" src="img/p7.png">
+      <li>單位差： <span class="text-warning">0.25rem</span></li>
+      <li><span class="text-warning">間距控制：</span>xs 使用固定格式 { property } { sides } - { size } 命名。</li>
+      <li><span class="text-warning">響應式間距控制：</span>sm、md、lg、xl、xxl。</li>
+        <li><span class="text-warning">命名格式：</span> { property } { sides } - <span class="text-warning">{ breakpoint }</span> - { size }
+          。</li>        
+    </ul>
+
+    <span class="text-warning">property 設定：</span>
+    <ul>
+      <li><span class="text-warning">m</span> - 設定 margin 的類別</li>
+      <li><span class="text-warning">p</span> - 設定 padding 的類別</li>
+    </ul>
+
+    <span class="text-warning">sides 設定：</span>
+    <ul>
+      <li><span class="text-warning">t</span> - 設定 margin-top 或是 padding-top 的類別</li>
+      <li><span class="text-warning">b</span> - 設定 margin-bottom 或是 padding-bottom 的類別</li>
+      <li><span class="text-warning">s</span> - (start) 在 LTR 設定 margin-left 或是 padding-left， RTL 設定 margin-right 或是
+        padding-right</li>
+      <li><span class="text-warning">e</span> - (end) 在 LTR 設定 margin-right or padding-right， RTL 設定 margin-left 或是
+        padding-left</li>
+      <li><span class="text-warning">x</span> - 同時設定 *-left 和 *-right</li>
+      <li><span class="text-warning">y</span> - 時設定 *-top 和 *-bottom</li>
+      <li><span class="text-warning">blank</span> - 同時設定 margin 或 padding 在元素的四個邊緣</li>
+    </ul>
+
+    <span class="text-warning">size 設定：( 可透過將項目增加到 $spacers Sass map 變數以新增更多尺寸。 )</span>
+    <ul>
+      <li><span class="text-warning">0</span> - 設定 margin 或是 padding 為 0</li>
+      <li><span class="text-warning">1</span> - (預設) 設定 margin 或是 padding 為 $spacer * .25</li>
+      <li><span class="text-warning">2</span> - (預設) 設定 margin 或是 padding 為 $spacer * .5</li>
+      <li><span class="text-warning">3</span> - (預設) 設定 margin 或是 padding 為 $spacer</li>
+      <li><span class="text-warning">4</span> - (預設) 設定 margin 或是 padding 為 $spacer * 1.5</li>
+      <li><span class="text-warning">5</span> - (預設) 設定 margin 或是 padding 為 $spacer * 3</li>
+      <li><span class="text-warning">auto</span> - 設定 margin 為 auto ( 當對象有寬度時，設定.mx-auto 就能輕易水平置中（左右都塞滿了，見下說明） )</li>
+    </ul>
+
+    <h5 class="mt-4 text-warning">【水平置中 mx-auto】</h5>
+    <p>Bootstrap 還包括一個 .mx-auto 類別，用於將固定寬度的塊級內容水平置中 ( 也就是具有 display: block 、<span class="text-warning">本身設有 width 的內容 </span> )，
+      <br>透過將水平 margin 設置為 auto 達成。</p>
+
+    <div class="mt-n2 bd-example p-3 border border-secondary">
+      <div class="mx-auto" style="width: 480px;">&lt;div class=&quot; <span class="text-warning">mx-auto</span> &quot;  style=&quot; width：480px;&quot; &gt;水平置中&lt;/div&gt;</div>
+    </div>
+
+    <h5 class="mt-4 text-warning">【負值的 margin】</h5>
+    <p>在 CSS 中， margin 屬性可以負值（padding 不能）。
+      <br>負值的 margin 在默認情況下是禁用的，可以通過在 Sass 中設置 <span class="text-warning">$enable-negative-margins：true</span> 啟用。
+      <br>關鍵 calss 公式為 size 前綴使用 <span class="text-warning"> n </span> 代表負值。其餘語法與正值 margin 相同。
+      <br><span class="text-warning">例：</span>mt-<span class="text-warning">n</span>5、mb-<span class="text-warning">n</span>5、m-md-<span class="text-warning">n</span>4、mt-md-<span class="text-warning">n</span>5
+      <br>
+      <div class="text-warning">
+        .mt-n1 { margin-top：-0.25rem<span class="my-width-015"></span>! important ; } <br>
+        .mt-n5 { margin-top：-1.5rem<span class="my-width-015"></span>!important; } <span class="text-white"><span class="my-width-050"></span>( 單位差為 0.25rem )</span>
+      </div>
+    </p>
+  </div>
+
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【浮動 float】</h5>
+    <p>
+      .float - { value }<span class="my-width-214"></span>【設定 float】value：start、end、none <br>
+      .float - { breakpoint } - { value }<span class=" my-width-100"></span>【響應式 float】breakpoint：sm、md、lg、xl、xxl
+    </p>
+  </div>
+
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【溢出處理 overflow】<span class="fs-6 text-white">與 CSS 觀念相同，只提供四種常用模式。</span></h5>
+    <p>
+      .overflow- { value }<span class="my-width-100"></span>【設定 overflow】value：auto、hidden、visible（網頁初始值）、scroll 
+    </p>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【位置 position】</h5>
+    <p>
+      .fixed-top<span class="my-width-165"></span>【保持上面】 <br>
+      .fixed-bottom<span class="my-width-134"></span>【保持下面】 <br>
+      .sticky-top<span class="my-width-159"></span>【撞到頂端則保持上面】 <br>
+      .sticky- { breakpoint }<span class="my-width-080"></span>【僅針對 sticky-top 提供響應斷點】breakpoint：sm、md、lg、xl
+    </p>
+    <p>.position- { value }<span class="my-width-103"></span>【設定 position】value：static、relative、absolute、fixed、sticky
+    </p>
+  </div>
+
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【尺寸 Sizing】</h5>
+    <p>
+      .w- { value }<span class="my-width-053"></span>【指定該寬度為多少百分比】value：25、50、75、100、auto<br>
+      .h- { value }<span class="my-width-056"></span>【指定該高度為多少百分比（前提為負容器有固定高）】value：25、50、75、100、auto<br>
+      例：.mw-100<span class="my-width-041"></span>【max-width：100%】<span class="my-width-052"></span>.mh-100<span
+        class="my-width-039"></span>【max-height：100%】
+
+    </p>
+    <p>
+      .vw-100<span class="my-width-112"></span>【width：100vw】<span class="my-width-053"></span>.vh-100<span
+        class="my-width-078"></span>【height：100vh】<br>
+      例：&nbsp;.min-vw-100&nbsp;【min-width：100vw】<span class="my-width-052"></span>.min-vh-100&nbsp;【min-height：100vw】
+    </p>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto border-bottom">
+    <h5 class="text-warning">【延伸連結 Stretched link】</h5>
+    <p>如某個連結範圍想擴大到外部容器去( 如 div、row、col、card )，可以對此連結添加 <span class="text-warning">.stretched-link</span> ，此連結會產生一個偽元素 : : after 以 position：absolute 方式塞滿整個空間（上層沒有定位的話），因此需要在父元素
+      綁定一個 <span class="text-warning">position-relative</span> 使得影響範圍限定在這個父元素內。
+    
+    </p>
+    <table>
+      <tbody>
+        <tr>
+
+          <td class="w-25">
+            <!-- START -->
+            <div class="position-relative bg-dark text-white">
+              <div class="text-info border border-info p-3 rounded-4">
+                <h5 class="mt-0 text-info">延伸連結區域之範例</h5>
+                <p>整個連結區域是由一個上層元素綁定 position-relative，使得作用僅限於上層元素，上層範圍可以很祖先。</p>
+                <a href="#" class="d-flex justify-content-end stretched-link link-danger fs-4">我是連結</a>
+              </div>
+            </div>
+            <!-- END -->
+          </td>
+
+          <td class="pt-2 ps-2 my-text-color-904e6f">
+            &lt;div class=&quot;<span class="text-warning">position-relative</span> bg-dark text-white &quot;&gt;<br>
+            <span class="my-width-010"></span>&lt;div class=&quot;text-info border border-info p-3 rounded-4&quot;&gt;<br>
+            <span class="my-width-020"></span>&lt;h5 class=&quot;mt-0 text-info&quot;&gt;延伸連結區域之範例&lt;/h5&gt;<br>
+            <span class="my-width-020"></span>&lt;p&gt;整個連結區域是由一個上層元素綁定 position-relative，使得作用僅限於上層元素，上層範圍可以很祖先。&lt;/p&gt;<br>
+            <span class="my-width-020"></span>&lt;<span class="text-warning">a</span> href=&quot;#&quot; class=&quot;d-flex justify-content-end <span class="text-warning">stretched-link</span> link-danger fs-4&quot;&gt;我是連結&lt;/a&gt;<br>
+                <span class="my-width-010"></span>&lt;/div&gt;<br>
+            &lt;/div&gt;
+          </td>
+
+        </tr>
+    </tbody>
+    </table>
+    <p class="mt-4">
+      <span class="text-warning">辨別 containing block：</span><br>
+      <span class="text-white">註：absolute 向上尋找 relative 參考定位時，遇到以下屬性則會導致預期外的定位：</span>
+    <ul>
+      <li>非 position：static 屬性。</li>
+      <li>none 以外的 transform 或 perspective 值。</li>
+      <li>在 transform 或 perspective 使用 will-change 作為值。</li>     
+      <li>none 以外的 filter 值，或是在 filter 使用 will-change 作為值 ( 只會在 Firefox 作用 )。</li>
+    </ul>
+    </p>
+  </div>
+
+  <div class="container mt-2 p-4 mx-auto">
+    <h4 class="text-center text-warning">表單 Forms</h4>
+    <p class="text-center">某些需求場合下你應該試著用 div 父元素來包住 input 與 label 元素成為一個元素群組之呈現排版。<br>
+      元素群組模式除了基本的 div，最後還會提供 div.input-group 與 div.form-floating 兩種表單群組的排版技巧。</p>
+
+    <h5 class="text-warning">【概觀 Overview】</h5>
+
+    <form class="container">
+      <div>
+        <label class="form-label" for="lokiMail">Email address</label>
+        <input class="form-control" id="lokiMail" type="email">
+        <div class="form-text text-white text-end">我們絕不會與其他任何人分享您的電子郵件。</div>
+      </div>
+      <div>
+        <label class="form-label" for="lokiPassword">Password</label>
+        <input class="form-control" type="password" id="lokiPassword">
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" id="lokiCheck" type="checkbox">
+        <label class="form-check-label" for="lokiCheck">對我進行檢查</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <p class="pt-3 text-info">input 欄位組合建議為 label.form-label + input.form-control + div.form-text 分別代表標題、欄位、描述文字：
+    <ul>
+      <li>label.form-label 為提供 margin-bottom 間隔</li>
+      <li>input.form-control 為 blcok 滿寬與外觀優化</li>
+      <li>div.form-text 為提供 margin-top 間隔與文字調整，非必要可省略此元素。可套用 block 或 inline 類型。</li>
+    </ul>
+    </p>
+    <p class="text-info">check | radio 欄位組合建議 div.form-check > input：checkbox.form-check-input + label.form-check-label
+      分別代表欄位與內文：
+    <ul>
+      <li>div.form-check 為父元素使用與適當排版</li>
+      <li>input：checkbox.form-check-input 提供耐看的打勾視窗</li>
+      <li>label.form-check-label 提供內文使用，但沒有任何屬性效果（可省略 class)</li>
+    </ul>
+    </p>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【Input & Textarea (Form controls)】<span class="fs-6 text-white"> (能控制 input 或 textarea
+          的外觀變化，你必須先綁定 .form-control 才能開始操作。)</span></h5>
+      <p>尺寸控制方式，有以下三種變化控制欄位高度：
+        <input type="text" class="mb-1 form-control form-control-lg" placeholder=".form-control-lg">
+        <input type="text" class="mb-1 form-control" placeholder="Default input">
+        <input type="text" class="mb-1 form-control form-control-sm" placeholder=".form-control-sm">
+      </p>
+      <p>禁用欄位效果，添加屬性 disabled 即可：
+        <input class="mb-1 form-control" type="text" placeholder="Disabled input" disabled>
+        <input class="mb-1 form-control" type="text" placeholder="Disabled readonly input" disabled readonly>
+      </p>
+      <p>僅供閱讀（可互動不可輸入），添加 readonly 即可。若不想暗化可將 form-control 更改為 .form-control-plaintext ：
+        <input class="form-control" type="text" placeholder="Readonly input here..." readonly>
+        <input class="form-control-plaintext" type="text" placeholder="Readonly input here..." readonly>
+      </p>
+
+      <span class="text-warning">檔案（單一或多筆）上傳的呈現效果與前面相同，包含三種尺寸與禁用效果：</span>
+      <div class="mb-3">
+        <label for="lokiSingleFile" class="form-label">默認文件輸入示例</label>
+        <input class="form-control" type="file" id="lokiSingleFile">
+      </div>
+      <div class="mb-3">
+        <label for="lokiMultiFile" class="form-label">多文件輸入示例</label>
+        <input class="form-control" type="file" id="lokiMultiFile" multiple>
+      </div>
+      <div class="mb-3">
+        <label for="lokiDisabled" class="form-label">禁用文件輸入示例禁用文件輸入示例</label>
+        <input class="form-control" type="file" id="lokiDisabled" disabled>
+      </div>
+
+      <span class="text-warning">若 input 為 color 類型，請添加.form-control-color 重定寬值：</span>
+      <label for="lokiColor" class="form-label">Color picker</label>
+      <input type="color" class="form-control form-control-color" id="lokiColor" value="#ff0000">
+      <br>
+      <span class="text-warning">HTML5 的新標籤 datalist 資料清單，提供 input 作建議參考，結構為 input [ list = ID ] + datalist#ID > option
+        *
+        n</span>
+      <br>
+      <label for="lokiDataList" class="form-label">數據列表示例</label>
+      <input class="form-control" list="lokiOptions" id="lokiDataList" placeholder="鍵入搜索...">
+      <datalist id="lokiOptions">
+        <option value="San Francisco">
+        <option value="New York">
+        <option value="Seattle">
+        <option value="Los Angeles">
+        <option value="Chicago">
+      </datalist>
+    </div>
+
+    <h5 class="mt-5 text-warning">【Select】<span class="fs-6 text-white">控制 select 的外觀變化，你必須先綁定 .form-select
+        才能開始操作。</span></h5>
+    <p>對尺寸控制方式，有以下三種變化控制欄位高度：</p>
+    <select class="form-select mb-3">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+
+    <select class="form-select form-select-lg mb-3">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+
+    <select class="form-select form-select-sm">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+
+    <div class="mt-5 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【Checkbox & Radio】</h5>
+      <ul>
+        <li>使用 div.form-check 父元素包覆 input 與 label 為組合</li>
+        <li>label 使用 label.form-check-label</li>
+        <li>勾選類 input(checkbox | radio) 使用 input.form-check-input</li>
+      </ul>
+      <p class="text-warning">對於 checked, Indeterminate（需由 JS 觸發）, disabled 型態外觀如下：</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h5 class="border-bottom border-warning text-warning">CheckBox Demo</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lokiCheckbox">
+              <label class="form-check-label" for="lokiCheckbox">Default checkbox （默認的核取方塊）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lokiChecked" checked>
+              <label class="form-check-label" for="lokiChecked">Checked checkbox （選中的核取方塊）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lokiIndeterminate">
+              <label class="form-check-label" for="lokiIndeterminate">Indeterminate checkbox （不確定的核取方塊）</label>
+              <script>
+                document.getElementById("lokiIndeterminate").indeterminate = true;
+              </script>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lokiDisabled" disabled>
+              <label class="form-check-label" for="lokiDisabled">Disabled checkbox （禁用的核取方塊）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="lokiCheckedDisabled" checked disabled>
+              <label class="form-check-label" for="lokiCheckedDisabled">Disabled checked checkbox （禁用選中的核取方塊）</label>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <h5 class="border-bottom border-warning text-warning">Radio Demo</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lokiDemo" id="lokiValue1">
+              <label class="form-check-label" for="lokiValue1">Default radio （默認的選項按鈕）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lokiDemo" id="lokiValue2" checked>
+              <label class="form-check-label" for="lokiValue2">Default checked radio （默認選中單選選項按鈕）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lokiDemoDis" id="lokiValue3" disabled>
+              <label class="form-check-label" for="lokiValue3">Disabled radio （禁用選中的選項按鈕）</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="lokiDemoDis" id="lokiValue4" checked disabled>
+              <label class="form-check-label" for="lokiValue4">Disabled checked radio （禁用選中的選項按鈕）</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-warning mt-3"></p>
+      <div class="container">
+        <h5 class="border-bottom border-warning text-warning">Switches feat.CheckBox Demo<span
+            class="my-width-025"></span><span class="fs-6 text-white">( checkbox 的另一種外觀表現，同樣的公式結構下對父元素額外再添加 .form-switch
+            產生視覺效果。)</span></h5>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lokiSwitch1">
+          <label class="form-check-label" for="lokiSwitch1">Default switch checkbox input (默認的切換核取方塊)</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lokiSwitch2" checked>
+          <label class="form-check-label" for="lokiSwitch2">Checked switch checkbox input (選中的切換核取方塊)</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lokiSwitch3" disabled>
+          <label class="form-check-label" for="lokiSwitch3">Disabled switch checkbox input (禁用的切換核取方塊)</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="lokiSwitch4" checked disabled>
+          <label class="form-check-label" for="lokiSwitch4">Disabled checked switch checkbox input (禁用選中的切換核取方塊)</label>
+        </div>
+      </div>
+
+    </div>
+    <h5 class="text-warning mt-5">【行內排列 Inline】</h5>
+    <p>前面例子的排列效果皆以 block 排列方式堆疊，若在設計上有 linline 行內排列需求。請試著對父元素添加 .form-check-inline 將會提供 inline-block 屬性並 Margin-right
+      空間。</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h5 class="border-bottom border-warning text-warning">CheckBox Inline Demo</h5>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lokiInlineCheck1" value="option1">
+            <label class="form-check-label" for="lokiInlineCheck1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lokiInlineCheck2" value="option2" checked>
+            <label class="form-check-label" for="lokiInlineCheck2">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="lokiInlineCheck3" value="option3" disabled>
+            <label class="form-check-label" for="lokiInlineCheck3">3 (disabled)</label>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <h5 class="border-bottom border-warning text-warning">Radio Inline Demo</h5>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="lokiRadio" id="lokiInlineRadio1" value="option1">
+            <label class="form-check-label" for="lokiInlineRadio1">1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="lokiRadio" id="lokiInlineRadio2" value="option2" checked>
+            <label class="form-check-label" for="lokiInlineRadio2">2</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="lokiRadio" id="lokiInlineRadio3" value="option3"
+              disabled>
+            <label class="form-check-label" for="lokiInlineRadio3">3 (disabled)</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【整合按鈕 Toggle Buttons】</h5>
+      <p>引用 Button 元件功能，進行另一種 checkbox 與 raido 視覺變化，相對原本公式結構完全不同做法：</p>
+      <ul>
+        <li>不需要父容器來包覆 label 與 input，直接兩者寫出即可</li>
+        <li>對勾選型 input 添加公式成為 input.btn-check ，使其效果將會隱藏於畫面上無法操作。</li>
+        <li>對 label 添加公式成為 label.btn，使其外觀為按鈕模式。</li>
+        <li>持有 label.btn 可添加色系，選擇 btn- { color } 或 btn-ouline- { color } 兩種色彩模式。</li>
+        <li>透過 label 的 for 屬性來連動 input 的 checked 狀態變化。</li>
+        <li>label 的啟用色變化來自 input 的 checked 狀態。</li>
+        <li>建議 input 添加屬性 [ autocomplete = ”off” ] 避免瀏覽器自動填入造成誤會。</li>
+      </ul>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 mt-3">
+            <h5 class="border-bottom border-warning text-warning mb-3">CheckBox feat.Buttons</h5>
+            <input type="checkbox" class="btn-check" id="lokiBtn1">
+            <label class="btn btn-danger" for="lokiBtn1">Single toggle</label>
+
+            <input type="checkbox" class="btn-check" id="lokiBtn2" checked>
+            <label class="btn btn-danger" for="lokiBtn2">Checked</label>
+
+            <input type="checkbox" class="btn-check" id="lokiBtn3" disabled>
+            <label class="btn btn-danger" for="lokiBtn3">Disabled</label>
+          </div>
+
+          <div class="col-sm-12 col-md-6 mt-3 mb-3">
+            <h5 class="border-bottom border-warning text-warning mb-3">Radio feat.Buttons</h5>
+            <input type="radio" class="btn-check" name="myRadio" id="lokiValue1" checked>
+            <label class="btn btn-success" for="lokiValue1">Checked</label>
+
+            <input type="radio" class="btn-check" name="myRadio" id="lokiValue2">
+            <label class="btn btn-success" for="lokiValue2">Radio</label>
+
+            <input type="radio" class="btn-check" name="myRadio" id="lokiValue3">
+            <label class="btn btn-success" for="lokiValue3">Disabled</label>
+
+            <input type="radio" class="btn-check" name="myRadio" id="lokiValue4" disabled>
+            <label class="btn btn-success" for="lokiValue4">Radio</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h5 class="mt-5 text-warning">【範圍 Range】</h5>
+    <p>範圍型的表單 input 在套用 Bootstrap 公式 input.form-range 後為 block 滿寬效果，以及大幅度的視覺設計。( range 能指定屬性 min=N, max=M, step=R )</p>
+    <div class="container">
+      <h5 class="border-bottom border-warning text-warning">Range DEMO</h5>
+      <label class="form-label" for="lokiRange1">Example range | <b>Value:50</b></label>
+      <input class="form-range" id="lokiRange1" type="range">
+
+      <label class="form-label" for="lokiRange2">Disabled range | <b>Value:50</b></label>
+      <input class="form-range" id="lokiRange2" disabled type="range">
+
+      <label class="form-label" for="lokiRange3">Example range | <b>Value:3</b></label>
+      <input class="form-range" min="0" max="5" id="lokiRange3" type="range">
+
+      <label class="form-label" for="lokiRange4">Example range | <b>Value:2.5</b></label>
+      <input class="form-range" id="lokiRange4" min="0" max="5" step="0.5" type="range">
+    </div>
+    <script>
+      document.querySelectorAll("input").forEach(e => {
+        e.oninput = () => e.previousElementSibling.children[0].textContent = "Value:" + e.value;
+      });
+    </script>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【欄位群組 Input group】</h5>
+      <p>input-group 唯一種群組排版效果，需將 label 與 input 整合成同一個欄位並群組化，群組內能任意整合 input 或 一般補述文字（非 label) ，觀念為：</p>
+      <ul>
+        <li>透過父元素 div.input-group 進行包覆 (flex 設計），主要是改良 input 的外觀為主，因此可放入多個 input 或一般文字（通常為 span) 做補述。</li>
+        <li>label 元素不會放入 div.input-group 內，該 input-group 主要是改變 input 結構而不是整體 label+input 之排版。</li>
+        <li>子元素之一般文字元素透過 span.input-group-text 來形成該 input 之補述。</li>
+        <li>位置順序根據子元素排列順序決定。</li>
+        <li>根據親和性設計，無 label 情況下 input 元素可追加 aria-label=描述 屬性表達該欄位之描述。</li>
+        <li>根據親和性設計，input 元素可追加 aria-describedby="ID" 屬性使該欄位之補述文字為何處 ID。</li>
+      </ul>
+      <div class="container">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="lokiMessage1">@</span>
+          <input class="form-control" aria-describedby="lokiMessage1" aria-label="lokiTitle1" type="text">
+        </div>
+
+        <div class="input-group mb-3">
+          <input class="form-control" aria-describedby="lokiMessage2" aria-label="lokiTitle2" type="text">
+          <span class="input-group-text" id="lokiMessage2">@example.com</span>
+        </div>
+
+        <label class="form-label" for="lokiInput">Your vanity URL</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="lokiMessage3">https://example.com/users/</span>
+          <input class="form-control" aria-describedby="lokiMessage3" id="lokiInput" type="text">
+        </div>
+
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <input class="form-control" aria-label="lokiTitle3" type="text">
+          <span class="input-group-text">.00</span>
+        </div>
+
+        <div class="input-group mb-3">
+          <input class="form-control" aria-label="lokiTitle4" type="text">
+          <span class="input-group-text">@</span>
+          <input class="form-control" aria-label="lokiTitle5" type="text">
+        </div>
+
+        <div class="input-group">
+          <span class="input-group-text">文本區域 textarea</span>
+          <textarea class="form-control" aria-label="lokiTitle6"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="container mt-5 pb-5 mx-auto border-bottom">
+      <h5 class="text-warning">【自動換行 Wrapping】<span class="fs-6 text-white">預設情況下 input-group 的 flex 參數被 Bootstrap
+          改為允許發生換行。若不要這樣做，可透過 flex 通用類別改回 .flex-nowrap。</span></h5>
+      <div class="container">
+        <label class="form-label" for="lokiInput1">嘗試環繞（默認）Try Wrap (Default)</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text">https://example.com/users/</span>
+          <input class="form-control" type="text">
+          <span class="input-group-text">https://example.com/users/</span>
+        </div>
+
+        <label class="form-label" for="lokiInput2">嘗試無包裝 Try No-Wrap</label>
+        <div class="input-group flex-nowrap">
+          <span class="input-group-text">https://example.com/users/</span>
+          <input class="form-control" type="text">
+          <span class="input-group-text">https://example.com/users/</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 pb-3 mx-auto">
+      <h5 class="text-warning">【尺寸 Sizes】<span class="fs-6 text-white">能對整體 input-group 調整欄位高度。此參數需額外添加</span></h5>
+      <ul>
+        <li>.input-group.input-group-sm<span class="my-width-039"></span>/*small*/</li>
+        <li>.input-group <span class="my-width-159"></span>/*default*/</li>
+        <li>.input-group.input-group-lg<span class="my-width-047"></span>/*large*/</li>
+      </ul>
+    </div>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【選填表單 Checkboxes and radios】</h5>
+      <p>也可以不使用 span 補述文字，改用 checkbox 或 radio 來追加輸入欄位使用。將原 span.input-group-text 元素轉為
+        div.input-group-text>input:{checkbox|radio}.form-check-input。</p>
+      <div class="container">
+        <h5 class="text-warning">Checkbox feat.prepend</h5>
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input" aria-label="lokiLabelA1" type="checkbox">
+          </div>
+          <input class="form-control" aria-label="lokiLabelA2" type="text">
+        </div>
+
+        <h5 class="text-warning">Radio feat.prepend</h5>
+        <div class="input-group">
+          <div class="input-group-text">
+            <input class="form-check-input" aria-label="lokiLabelB1" type="radio">
+          </div>
+          <input class="form-control" aria-label="lokiLabelB2" type="text">
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto border-bottom">
+      <h5 class="text-warning">【多項輸入與插件 Multi input and addons】<span class="fs-6 text-white">如前面所述，在 input-group 內支援多項目的
+          input.form-control 或 .input-group-text 隨使用者自訂排序。</span></h5>
+      <div class="container">
+        <div class="input-group mb-3">
+          <span class="input-group-text">$</span>
+          <span class="input-group-text">0.00</span>
+          <input type="text" class="form-control">
+          <span class="input-group-text">$</span>
+          <span class="input-group-text">0.00</span>
+        </div>
+      </div>
+      <p class="text-danger">注意! 驗證功能時（後續介紹）若想對 input 進行動態驗證時，只能支援單筆 input 的 input-group，所以不建議這樣用多項 input。</p>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto">
+      <h5 class="text-warning">【整合元件 Buttons & Dropdowns】<span class="fs-6 text-white">部分元件元素也能放置在 input-group
+          內一同排列，像是按鈕、下拉選單、分段按鈕等元素組合</span></h5>
+      <div class="container">
+        <h5 class="text-warning">Button addons</h5>
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+          <input type="text" class="form-control">
+        </div>
+
+        <h5 class="text-warning">dropdown addons</h5>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+            data-bs-toggle="dropdown">Dropdown</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <h5 class="text-warning">Segmented buttons</h5>
+        <div class="input-group mb-3">
+          <button type="button" class="btn btn-outline-secondary">Action</button>
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown">Toggle Dropdown</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-1 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【整合自訂版本的 select 與 input：file】<span class="fs-6 text-white">可整合 select.form-select 元素或
+          input:file.form-control 元素使用。</span></h5>
+      <div class="container">
+        <h5 class="text-warning">Select addons</h5>
+        <div class="input-group mb-3">
+          <select class="form-select" id="lokiSelect1">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label class="input-group-text" for="lokiSelect1">Options</label>
+        </div>
+
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" type="button">Button</button>
+          <select class="form-select" aria-label="lokiLabel1">
+            <option selected>Choose...</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <h5 class="text-warning">Input：file addons</h5>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="lokiFile1">
+          <label class="input-group-text" for="lokiFile1">Upload</label>
+        </div>
+
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" type="button" id="lokiBtn1">Button</button>
+          <input type="file" class="form-control" aria-describedby="lokiBtn1" aria-label="lokiLabel2">
+        </div>
+      </div>
+      <p>input：file 的 HTML5 屬性 multiple 為多檔案上傳，注意以陣列型態設定，例如 name[ ]。
+        <br>這裡官方原文提到 custom 是因為 Bootstrap v5 版本的 select 與 input：file ，皆為重改瀏覽器外觀介面的自訂版本，而舊 v4 版本還保留瀏覽器版本共兩種可選用。
+        <br>因此官方文件還保留 custom 字眼。但對於現在來說只剩下自訂外觀介面，因此不用去在意 custom 字眼。
+      </p>
+    </div>
+
+    <div class="container mt-5 pb-5 mx-auto border-bottom">
+      <h5 class="text-warning">【浮動標籤 Floating labels】<span class="my-width-700"></span><span
+          class="fs-1 text-white">重要!! 動態效果</span></h5>
+      <p class="text-warning">form-floating 為另一種群組排版效果，同樣需將一對 label 與 input 整合成同一個欄位，透過互動產生浮動行為之提示標題。作用條件如下：</p>
+      <ul>
+        <li>透過父元素 div.form-floating 進行包覆 (position 設計），父元素內只會拿來放一對 label 與 input 沒有例外。</li>
+        <li>子元素使用 input.form-control 與 普通 label 即可。</li>
+        <li>注意 input 一定要提供 placeholder 屬性，才能產生作用。</li>
+        <li>注意順序一定要 input + label，否則 CSS 的兄弟選擇器會失敗而無法產生作用。</li>
+      </ul>
+
+      <p class="text-warning">然而根據原理如下：</p>
+      <ul>
+        <li>透過偽元素 input.form-control::placeholder　設定 color:transparent 字為無色。</li>
+        <li>label 元素會 absolute 重新定位到原本 input 的 placeholder 處，產生假重疊，真正的 placeholder 字看不見。</li>
+        <li>focus 事件、否定選擇器 (:not)、偽元素 (:placeholder-shown) 三者完成轉場，每當 input.form-control 發生 focus 且處在不是 placeholder
+          顯示時，其指定兄弟選擇器 ~ 找到 label 做轉場動畫。</li>
+        <li>透過轉場移動 label 的位置與外觀。</li>
+        <li>focus 事件不存在動畫反轉。</li>
+      </ul>
+
+      <div class="container">
+        <div class="form-floating mb-3">
+          <input class="form-control" id="lokiFloatlabel1" placeholder="隨便不重要" type="email">
+          <label for="lokiFloatlabel1">Email address 請輸入您的電子信箱</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="lokiFloatlabel2" placeholder="隨便不重要" type="password">
+          <label for="lokiFloatlabel2">Password 請輸入您的密碼</label>
+        </div>
+        <form class="form-floating mb-3">
+          <input class="form-control" id="lokiFloatlabel3" placeholder="隨便不重要" value="test@example.com" type="email">
+          <label for="lokiFloatlabel3">Input with value 輸入值</label>
+        </form>
+        <form class="form-floating">
+          <input class="form-control is-invalid" id="lokiFloatlabel4" placeholder="隨便不重要" value="test@example.com"
+            type="email">
+          <label for="lokiFloatlabel4">Invalid input 輸入無效</label>
+        </form>
+      </div>
+
+      <h5 class="text-warning mt-3">Textarea 應用</h5>
+      <p>可套用在 textarea 元素上，將 input.form-control 改為 textarea.form-control。注意的是預設高度相對較矮（原根據 input 所設計的），可自行調整高度修改。</p>
+      <div class="container">
+        <div class="form-floating mb-3">
+          <textarea class="form-control" placeholder="隨便不影響" id="lokiFloatLabel1"></textarea>
+          <label for="lokiFloatLabel1">Message Writing Here...</label>
+        </div>
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="隨便不影響" id="lokiFloatLabel2" style="height: 100px"></textarea>
+          <label for="lokiFloatLabel2">Message Writing Here...</label>
+        </div>
+      </div>
+
+      <h5 class="text-warning mt-3">Select 應用</h5>
+      <p>套用在 select.form-select 也可以，唯一差別因為沒有 placehoder 屬性，所以會直接定位在最終處上。</p>
+      <div class="container">
+        <div class="form-floating">
+          <select class="form-select" id="lokifloat1">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+          <label for="lokifloat1">Works with selects</label>
+        </div>
+      </div>
+
+      <h5 class="text-warning mt-3">Grid 排版</h5>
+      <p>可輕鬆將 div.form-floating 整合到 Grid 排版系統內，只要注意 div 各自角色為何。 <span class="fs-6 text-danger">( 例 1 與例 2 功能相同，唯
+          form-floating 位置不同。 )</span></p>
+
+      <div class="container">
+        <!-- 例 1 -->
+        <h5 class="text-warning">例 1：<span class="fs-6 text-white">( div.&nbsp;&nbsp;form-floating ) 用 2 個 DIV 包 input
+          </span></h5>
+        <div class="row g-2">
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="lokiLabel1" placeholder="隨便" value="mdo@example.com">
+              <label for="lokiLabel1">Email address</label>
+            </div>
+          </div>
+
+          <div class="col-md">
+            <div class="form-floating">
+              <select class="form-select" id="lokiLabel2" aria-label="Floating label select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <label for="lokiLabel2">Works with selects</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 例 2 -->
+        <h5 class="mt-3 text-warning">例 2：<span class="fs-6 text-white">(
+            div.&nbsp;&nbsp;col-md.&nbsp;&nbsp;form-floating ) 用 1 個 DIV 包 input </span></h5>
+        <div class="row g-2">
+          <div class="col-md form-floating">
+            <input type="email" class="form-control" id="lokiLabel3" placeholder="隨便" value="mdo@example.com">
+            <label for="lokiLabel3">Email address</label>
+          </div>
+
+          <div class="col-md form-floating">
+            <select class="form-select" id="lokiLabel4" aria-label="Floating label select example">
+              <option selected>Open this select menu</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="lokiLabel4">Works with selects</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="container mt-2 p-4 mx-auto">
+    <h4 class="text-center text-warning">表單排版技巧 Form Layout</h4>
+
+    <h5 class="text-warning">【簡單的表單與通用類別應用】</h5>
+    <p>直接使用你的 HTML 認知來設計表單，大致有以下重點說明</p>
+    <ul>
+      <li>所有套用 .form-control 的元素都會是 block 與 width：100% 效果。</li>
+      <li>Bootstrap 對 < form> 沒有特別設計，因此 HTML 相關特性都保留，例如提交仍注意 buttom 元素自帶 submit 連動（除非持有 type 屬性）。</li>
+      <li>對 form 元素添加屬性 disabled 會導致整個表單禁用。</li>
+      <li>可使用 Margin 通用類別來做排版技巧，這是最直覺的排版加強技巧。例如建議使用 mb-3 增加空間感。</li>
+    </ul>
+
+    <h5 class="mt-5 text-warning">【網格與間格 Grid & Gutter】<span class="fs-6 text-white">使用 Grid 系統 row > col 進行版面空間分配，並可搭配
+        gutter 參數調整欄位間的距離，尤其在響應式網頁有良好的表現能力</span></h5>
+    <div class="container">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress2" class="form-label">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="mt-4 p-3 border border-secondary rounded-4">
+      <h5 class="text-warning">【水平表單】</h5>
+      <p>透過 grid 為同一個 row 內兩組 col 做水平排列時，可對 label 添加 .col-form-label 使 label 高度與 input 高度一致垂直至中。如 input 有尺寸時亦提供對應的尺寸高度。
+      </p>
+      <ul>
+        <li>.col-form-label-sm<span class="my-width-050"></span>/* 對應 input.form-control.form-control-sm 之高度 */</li>
+        <li>.col-form-label<span class="my-width-080"></span>/* 對應 input.form-control 之高度 */</li>
+        <li>.col-form-label-lg<span class="my-width-059"></span>/* 對應 input.form-control.form-control-lg 之高度 */</li>
+      </ul>
+      <form class="container">
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3">
+          </div>
+        </div>
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+              <label class="form-check-label" for="gridRadios1">
+                First radio
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <label class="form-check-label" for="gridRadios2">
+                Second radio
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+              <label class="form-check-label" for="gridRadios3">
+                Third disabled radio
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="row mb-3">
+          <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1">
+              <label class="form-check-label" for="gridCheck1">
+                Example checkbox
+              </label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+
+      <h5 class="mt-5 text-warning">【欄位尺寸與自動分配】<span class="fs-6 text-white">整合 grid 的欄位空間觀念，舉例：</span></h5>
+      <ul>
+        <li>.col-7 > input + .col.input + .col.input : 空間分配扣除 7 剩餘 5，三者 input 比例為 7 + 2.5 + 2.5</li>
+        <li>.row&nbsp;&nbsp;.align-items-center > .col-auto * n : 每個 input 會自動根據內容寬度為主，若部分高度不一致則依賴交軸對齊進行置中。</li>
+        <li>.row&nbsp;&nbsp;.align-items-center > .col- { number } * n + .col-auto * n : 同上話題，即使包含指定寬度的欄位也能自動分配。</li>
+        <li>.row&nbsp;&nbsp;.row-cols-lg-auto > .col-12 * n : 斷點 LG 模式時會自動內容寬欄位，否則會滿寬為主。</li>
+        <li>.row&nbsp;&nbsp;.row-cols-lg-auto&nbsp;&nbsp;.g-3&nbsp;&nbsp;.align-items-center > .col-12 * n :
+          同上，欄位的水平垂直都撐開間隔，且確保所有欄位零件都垂直對齊至中。</li>
+      </ul>
+    </div>
+
+
+    <div class="container mt-5 pb-5 mx-auto border-bottom">
+      <h5 class="text-warning">【瀏覽器驗證 Validation】</h5>
+      <p>驗證主要是當表單進行提交時若欄位輸入錯誤或未填時禁止提交完成，並反向回饋到欄位畫面上說明錯誤的輸入缺失。
+        <br>驗證的顯示方法可以分為兩種，一種是瀏覽器提供的基本驗證功能，另一種是由 Bootstrap 搭配 JS 語法完成。
+      </p>
+
+      <h5 class="text-warning">【瀏覽器預設的驗證】<span class="fs-6 text-white">要觸發瀏覽器預設的驗證事件有以下條件：</span></h5>
+      <ul>
+        <li>需驗證的表單元素先添加屬性 required，同時搭配 input [ type = * ] 屬性來提供正規表達規則判斷，一旦不符合則直接回應預設之回應文字。</li>
+        <li>需自訂回應文字可透過 HTML約束驗證 API，藉由 JavaScript 操作 setCustomValidity 來設計想要的正規表達規則與放送自訂回應文字，範例如下：</li>
+      </ul>
+      <div class="container">
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="lokiName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="lokiName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="lokiPWD" class="form-label">Password</label>
+            <input type="password" class="form-control" id="lokiPWD" required>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () { // 另一種 document.ready 的方法
+          document.querySelector("#lokiName").oninvalid = function () {
+            //當進行驗證事件時，如果不通過在指定物件變數獲得 false，顯示自訂提示字
+            if (!this.validity.valid) this.setCustomValidity("你沒名字嗎？");
+          }
+          document.querySelector("#lokiName").oninput = function () {
+            //當使用者進行編寫時，清除提示字。將不再顯示輸出
+            this.setCustomValidity("");
+          }
+
+          //本身還是會有基本的 text 不留白的檢查
+          document.querySelector("#lokiPWD").oninput = function () {
+            //當使用者進行編寫時，進行另一種正規檢查而更改提示字
+            this.setCustomValidity("");
+            let mystr = new RegExp('\\d{4}$');
+            if (!mystr.test(this.value)) this.setCustomValidity("只能 4 個數字");
+          }
+        });
+      </script>
+
+
+
+      <h5 class="mt-5 text-warning">【Bootstrap 驗證功能】</h5>
+      <p>也可改用 Bootstrap 的驗證功能自訂回應文字（同樣依賴 HTML 的驗證事件），原理為透過 input 對象（或 select,textarea 皆適合）之偽類 :valid（正確：綠） 和
+        :invalid（錯誤：紅） 來觸發指定之兄弟元素進行 display 呈現文字。
+        <br>你需要自己先編寫腳本來處理驗證，接著自行添加 class 至指定元素位置來顯示驗證。注意如下：
+      </p>
+      <ul>
+        <li>由於 HTML5 本來有自己的表單驗證，使用 Bootstrap 驗證前需先關閉該功能，其對元素添加屬性 form [ novalidate ] 即可取消 HTML 驗證。</li>
+        <li>Bootstrap 的驗證呈現方式透過 form.was-validated 來切換，也就是你需要透過 JS 添加移除該 class（可試著先手動添加看看其效果），添加的時機通常是 submit 當下之處理。
+        </li>
+        <li>在 Ajax 應用技巧下（不離開網頁的後端串接），當你 callback 後已不需要驗證動作時，該做的事就是移除 form.was-validated 這個 class 名稱。</li>
+        <li>在 form.was-validated 狀態下，預設提供兩種驗證文字風格 (feedback 與 tooltip)。如需自訂回應文可添加元素 .valid-feedback 與 .invalid-feedback
+          來規劃回應文字。</li>
+        <li>同上，另一種風格為提示泡泡效果為 div.{ valid-tooltip | invalid-tooltip }，需確保父容器有 position：relative 可提供參考定位（如果是使用 .col
+          來排版就已有此參數）。</li>
+      </ul>
+      <p class="text-warning">舉例 javascript 腳本如何對提交時進行驗證後回饋畫面：</p>
+      <div class="container">
+        <form class="row g-3 lokiValidation" novalidate>
+          <div class="col-md-6">
+            <label for="lokiInput1" class="form-label">Text1</label>
+            <input type="text" class="form-control" id="lokiInput1" value="請輸入您的電子信箱" required>
+            <!-- <div class="valid-feedback">good Message!!</div>
+              <div class="invalid-feedback">fail Message!!</div> -->
+          </div>
+          <div class="col-md-6">
+            <label for="lokiInput2" class="form-label">Text2</label>
+            <input type="text" class="form-control" id="lokiInput2" value="" required>
+            <div class="valid-feedback">good Message!!</div>
+            <div class="invalid-feedback">fail Message!!</div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        document.querySelectorAll('.lokiValidation').forEach(function (nod) {  //找到所有持有指定 class 之各項元素
+          nod.addEventListener('submit', function (event) { //監測 submit 時，做以下事情
+            if (!this.checkValidity()) { //如果這個元素的 checkValidity 為 false，代表驗證不通過
+              event.preventDefault(); //取消當下的 event 預設行為
+              event.stopPropagation(); //取消當下的傳遞與冒泡事件
+            }
+            this.classList.add('was-validated'); //顯示驗證文字結果，出現之場合看個人需求
+          });
+        });
+      </script>
+
+
+      <div class="mt-4 p-3 border border-secondary rounded-4">
+        <h5 class="text-warning">【伺服器驗證】<span class="fs-6 text-white">本章節省略，其餘內容詳閱 <a class="text-warning"
+              href="https://summer10920.github.io/2021/03-01/bs5-class-2/" target="_blank">[基礎課程] Bootstrap5
+              教學（二）：工具、通用、表單 </a></span></h5>
+        <p>前面的操作是透過前端（建議）來做驗證處理（控制 submit 事件的後續步驟）。如果你的驗證是使用伺服器來做驗證（重新產生畫面），另一種替代方法為直接對控制單筆添加 input.{ is-valid |
+          is-invalid } （綠｜紅）觸發來單項 input 的驗證顯示。
+          <br>如此一來可在沒有 form.was-validated 狀態下，由後端來決定哪些驗證提示做響應文字 ( div.valid-feedback 與 .invalid-feedback )。
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
